@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Initiation à la programmation</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jean-Loup Pecquais" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Initiation à la programmation
+## Et son application aux métiers du son
+### Jean-Loup Pecquais
+
+---
+
+
+class: middle, center
+
+# Programme
+
+---
+
+## Jours 1
+
++ Historique de la programmation
++ Les environnements de developpement
++ Les méthodes de travail
+
+---
+
+## Jours 2
+
++ Introduction au language lua
++ Découverte de l'API de ReaScript
++ TP : Création de scripts
+
+---
+
+## Jours 3
+
++ Introduction au language de programmation EEL2
++ Présentation du framework JSFX
++ TP : Créer un plug-in audio
+
+---
+
+# Objectifs
+
++ Découvrir le monde de la programmation
++ Ajouter la programmation dans sa boîte à outil d'ingénieur du son
++ Comprendre les tenants et les aboutissant de la création d'un plug-in audio
+
+---
+
+# Contact
+
++ Jean-Loup Pecquais
++ jeanlouppecquais@ik.me
+
+---
+
+# Préambule
+
+---
+
+## Pourquoi s'intéresser à la programmation ?
+
+--
+
++ Comprendre le fonctionnement de ses outils
+
+--
+
++ Pouvoir adapter et/ou construire ses outils
+
+--
+
++ Ne pas subir le marché des plug-ins
+
+---
+
+# Historique de la programmation
+
+---
+
+## Généralités
+
++ Qu'est ce qu'un language de programmation ?
+
+--
+
++ Qu'est ce qu'un ordinateur ?
+
+---
+
+## Les deux types de languages
+
++ Les languages compilés
+
+--
+
++ Les languages interprétés
+
+---
+
+### Les languages compilés
+
+&lt;!-- TODO: Schéma explication des languages compilés--&gt;
+
+???
+
+Démonstration de la compilation et de l'utilisation d'un logiciel
+
+---
+
+### Les languages interprétés
+
+&lt;!-- TODO: Schéma explication des languages interprétés--&gt;
+
+---
+
+## Les familles de language
+
+---
+
+## Les dates clefs
+
+---
+
+class: middle, center
+
+# Les environnements de développement
+
+---
+
+## Qu'est ce qu'un IDE ?
+
+--
+
+* Environnement de développement intégré
+
+--
+
+* Regroupe un ensemble de fonctionnalités :
+
+--
+
+    * Un éditeur de texte
+    * Une aide à l'écriture (auto-complétion)
+    * Un terminal
+    * Un compileur / un interpréteur
+    * Un gestionnaire de projet
+
+---
+
+**Quelques exemples**
+
+* Les classiques
+    * Visual Studio
+    * X-Code
+    * CodeBlock
+
+--
+
+* Les plus "modernes"
+    * Visual Studio Code
+    * Sublime text
+    * PyCharm/Clion/JetBrain
+
+---
+
+class: middle, center
+
+## Les frameworks
+
+---
+
+### Le principe
+
+* Proposer un socle de fonctionnalités de base :
+    * Accesseur audio, une librairie graphique, blocs DSP élémentaires, etc.
+
+---
+
+### Quelques exemples
+
+--
+
+.pull-left[
+
+**JUCE**
+
+* Utilisé par la grande majorité des plug-ins du marché
+* Appartient à PACE
+* Utilisé par une grande communauté
+
+]
+
+--
+
+.pull-right[
+
+**FLUX:: Framework**
+
+* Très complet et très puissant
+* Réservé à la société FLUX::
+* Très peu d'utilisation en dehors des produits FLUX::
+
+]
+
+---
+
+class: middle, center
+
+## Les SDK
+
+---
+
+### Présentation
+
+* SDK signifie : Software Development Kit
+
+&lt;!-- * SDK signifie : Software Development Kit
+* Outil délivré à des développeurs par des développeurs pour des développeurs
+* Exemple : SDK VST3 --&gt;
+
+---
+
+class: middle, center
+
+## Les API
+
+---
+
+### Présentation
+
+* API signifie : Application Programming Interface
+* Ensemble de classes, méthodes, fonctions et variable
+* Permet à deux logiciels de s'interfacer
+
+---
+
+### Exemples
+
+**L'API de REAPER**
+
+---
+
+class: middle, center
+
+# Les logiciels de gestion de version et de projet
+
+---
+
+## Travail colaboratif
+
+* Le développement est un travail d'équipe
+    * Architècte logiciel
+    * Implémentation bas niveau, framework
+    * Implémentation DSP
+    * Implémentation graphique
+    * etc.
+* Plusieurs personnes peuvent être amenées à manipuler les mêmes fichiers
+* Certaine modification peut casser le programme, comment revenir en arrière ?
+
+---
+
+## Git
+
+* Créé par Linus Torvald
+* Open-source 
+* Logiciel de gestion de version le plus utilisé au monde.
+
+---
+
+### Solutions utilisant Git
+
+* GitHub
+* GitLab
+* BitBucket
+* NPM
+
+---
+
+### Comment fonctionne GitHub
+
+&lt;img src="images/1280px-Git_operations.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# TP : Configuration d'un environnement de travail
+
+---
+
+## A faire
+
++ Installer Visual Studio Code
++ Installer Git
++ Créer un compte sur GitHub
++ Cloner le repository suivant :
+
+&lt;code&gt;github.com/mon/repository/ENSLL&lt;/code&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Jours 1
+
+## Historique de la programmation
+
+Languages compilés VS Languages scriptés
+
+Performance VS praticité
+
+**copié collé**
+
+[https://fr.wikibooks.org/wiki/Programmation/Historique](https://fr.wikibooks.org/wiki/Programmation/Historique)
+
+[https://en.wikipedia.org/wiki/Assembly_language](https://en.wikipedia.org/wiki/Assembly_language)
+
+[https://en.wikipedia.org/wiki/Fortran](https://en.wikipedia.org/wiki/Fortran#Obsolescence_and_deletions)
+
+[https://simple.wikipedia.org/wiki/C_(programming_language)](https://simple.wikipedia.org/wiki/C_(programming_language))
+
+[https://simple.wikipedia.org/wiki/Compiler](https://simple.wikipedia.org/wiki/Compiler)
+
+[https://en.wikipedia.org/wiki/C%2B%2B](https://en.wikipedia.org/wiki/C%2B%2B)
+
+L'arrivée de la logique programmable provoqua une cascade 
+d'inventions : l'assembleur (c'est à dire l'utilisation de mnémoniques à
+ la place des séquences de chiffres du langage machine) fut inventé en 
+1948, le premier langage évoluée, l'A0, en 1951, suivi du [Fortran](https://fr.wikibooks.org/wiki/Programmation_Fortran) (1956), du [Cobol](https://fr.wikibooks.org/wiki/Programmation_Cobol) (1959), du [Lisp](https://fr.wikibooks.org/wiki/Programmation_Lisp) (1959) et de l'[Algol](https://fr.wikibooks.org/wiki/Programmation_Algol) (1960).
+
+Le [Basic](https://fr.wikibooks.org/wiki/Programmation_Basic) est créé en 1965 et le [Pascal](https://fr.wikibooks.org/wiki/Programmation_Pascal) en 1968. Le [C](https://fr.wikibooks.org/wiki/Programmation_C) et [Prolog](https://fr.wikibooks.org/w/index.php?title=Programmation_Prolog&amp;action=edit&amp;redlink=1) voient le jour en 1972 et [Smalltalk](https://fr.wikibooks.org/wiki/Programmation_Smalltalk), le premier langage objet, la même année.
+
+La programmation orientée objet prendra son essor avec [C++](https://fr.wikibooks.org/wiki/Programmation_C%2B%2B), créé en 1983. En 1986 est créé [Perl](https://fr.wikibooks.org/wiki/Programmation_Perl). [Python](https://fr.wikibooks.org/wiki/Programmation_Python) est créé en 1991 et 1995 verra l'apparition de [Java](https://fr.wikibooks.org/wiki/Programmation_Java), qui prétend être portable au niveau de l’exécutable, et de [PHP](https://fr.wikibooks.org/wiki/Programmation_PHP). 2000 voit l'apparition du premier langage créé par Microsoft, [C#](https://fr.wikibooks.org/wiki/Programmation_C_sharp).
+
+Les [langages de description](https://fr.wikipedia.org/wiki/Langage_de_d%C3%A9finition_de_donn%C3%A9es), pas assez complets pour être considérés comme des langages de programmation, apparaissent vers 1969, avec le [GML](https://fr.wikipedia.org/wiki/Standard_Generalized_Markup_Language) puis le [SGML](https://fr.wikipedia.org/wiki/Standard_Generalized_Markup_Language).
+Le [HTML](https://fr.wikibooks.org/wiki/Programmation_HTML) est créé en 1990.
+En 1996 est introduit [XML](https://fr.wikibooks.org/wiki/Programmation_XML).
+Ces deux derniers langages sont dérivés du SGML : leur syntaxe reprend différentes parties de celle du SGML.
+
+Les travaux actuels semblent montrer que la tendance vers plus 
+d'abstraction se poursuit, avec la programmation orientée aspect, par 
+exemple.
+
+## Les environnements de développement
+
+IDE (VS Code?)
+
+Framework
+
+JUCE (juste présenter, représente 80% des PI)
+
+FLUX:: (en contre exemple à JUCE)
+
+SDK
+
+API Ode à la documentation
+
+GIT (Avec GUI)
+
+Repo
+
+Branche
+
+Pull
+
+Commit
+
+Push
+
+Pull Request
+
+## Configurer le dépôt gitHub de la promo
+
+Un repo sur mon compte, une branche par élève.
+
+# Jours 2
+
+## Introduction au lua
+
+[https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
+
+Présentation générale
+
+- Variable
+- Fonction
+- Tableau
+- Conditionnelles
+- Boucle for
+
+De l’importance de bien commenter
+
+## Présentation de l’API de REAPER
+
+- Bienvenu en Corrèze
+
+## Scriptons !
+
+- Gestion de la tête de lecture
+- Utilitaire de création de DDP
+- Créer un groupe de piste
+- Faire un fader unity
+- Découper un objet avec le curseur de la souris, sans déplacer la tête de lecture
+- Créer une piste auxiliaire pour les pistes sélectionnées
+- Créer une piste auxiliaire par pistes séléctionnées
+
+# Jours 3
+
+## Présentation eel2
+
+[https://www.cockos.com/EEL2/](https://www.cockos.com/EEL2/)
+
+Le C en sms
+
+## Codons !
+
+- Matrice MS
+- Panoramique d’intensité
+- Panoramique de temps
+- Panoramique de temps et d’intensité
+- Elargisseur mono/stereo (compatible mono)
+- Chorus
+- Flanger
+- Phaser
+- Rotation de phase linéaire, sans FFT
+- Délai
+- Compresseur (? à évaluer)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
