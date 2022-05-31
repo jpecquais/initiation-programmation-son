@@ -25,6 +25,7 @@ class: middle, center
 
 ## Jours 1
 
++ Rappels sur l'informatique orienté audio
 + Historique de la programmation
 + Les environnements de developpement
 + Les méthodes de travail
@@ -82,21 +83,129 @@ class: middle, center
 
 ---
 
-# Historique de la programmation
-
----
-
-## Généralités
-
-+ Qu'est ce qu'un language de programmation ?
-
---
+# Généralités
 
 + Qu'est ce qu'un ordinateur ?
 
+--
+
++ Qu'est ce qu'un language de programmation ?
+
 ---
 
-## Les deux types de languages
+## Les ordinateurs
+
++ Ensemble de composants : Processeurs + Mémoires
+    + Processeurs : CPU (plusieurs coeurs ou plusieurs CPU), GPU
+    + Mémoire de stockage, mémoire vive, etc.
+
++ Ensemble de logiciels
+    + Kernel
+    + Gestion des périphériques (audio, vidéo, contrôleurs)
+    + Interfaces graphiques (bureau, explorateur de fichiers)
+
+---
+
+## Les système d'exploitation
+
++ Solutions propriétaires
+    + Windows
+    + MacOS
+
++ Solutions libres
+    + Linux/GNU
+
+---
+
+## Choisir un OS ?
+
++ MacOS = Linux clef en main
++ Linux = MacOS en kit
++ Windows = ?
+
+---
+
+## Informatique embarquée / informatique généraliste
+
+Informatique embarquée
++ Optimisé pour une tâche (exemple : console de mixage numérique)
+
+Informatique de "bureau"
++ Polyvalente
+
+On peut également évoquer l'informatique destinée aux serveurs.
+
+---
+
+## Les défis de l'audio-numérique sur ordinateur générique
+
++ Le traitement de l'audio en temps réel !
+    + Equipement non dédié (donc non optimisé)
+    + Tous les kernels ne sont pas égaux (Générique VS low-latency VS real-time // différences de scheduler et de gestion des priorités).
+    + Toutes les bus de communication ne se vallent pas (USB vs PCIe par ex.)
+    + Tous les pilotes d'interfaces audio non plus.
+    + Ainsi que les logiciels ( Pro Tools & REAPER par ex. ;-) ) 
+
+---
+
+## Les défis du développement orienté audio
+
+Au delà de la qualité sonore d'un plug-in
+
++ Optimiser la charge CPU
++ Prendre le minimum de temps possible
+
+Dans les deux cas, la question est souvent : à quel prix sur le rendu audio ?
+
+---
+
+### Exemple concret : égaliseur
+
++ ReaEQ (Cockos) : temps réel (PDC = 0 smpl) mais on observe un phénomène de cramping vers la fréquence de Nyquist.
++ Pro-Q3 (Fab Filter) :
+    + zéro latence : temps réel sans cramping en amplitude. Cependant le déphasage généré par le filtre se réplie toujours à Nyquist.
+    + natural phase : 320 smpl de latence, plus de cramping
+    + phase linéaire : de 3072 smpl à 66560 smpl, inutilisable pour du temps réel.
+
+---
+
+### Exemple concret : compresseur
+
++ ReaComp (Cockos) : temps réel, mais présence d'aliasing lorsque les temps d'attaque et de release sont court.
++ Molotok (Tokyo Dawn Lab) : trois modes, temps réel, éco et precise. Les deux derniers jouant certainement sur du sur-échantillonnage (circuit de détéction et/ou circuit de traitement).
+
+---
+
+### Exemple concret : saturation
+
++ Saturation (Cockos) : temps réel, alisaing (également léger en ressource).
++ ChowTapeModel (ChowDSP) : 36 smpl par défaut. Jusqu'à 102 smpl à OS*16 en phase linéaire. Très gourmand en ressource, mais rendu "qualitatif".
+
+---
+
+### Les qualités d'un plug-in
+
++ Chercher le meilleur rapport entre performance et qualité de rendu sonore
++ Stabilité sur les différents formats (VST, VST3, AAX, AU, LV2, etc.)
++ **Et l'interface utilisateur !**
+
+---
+
+## Qu'est ce que programmer
+
++ Donner des instructions au processeur.
+
+---
+
+## Les différents types de languages
+
+Du niveau le plus bas au plus haut (du plus proche de la machine au plus proche de l'utilisateur)
+
+--
+
++ Le language assembleur
+
+--
 
 + Les languages compilés
 
@@ -106,9 +215,66 @@ class: middle, center
 
 ---
 
+## Hello world en assembleur !
+
+En assembleur :
+
+~~~
+str:
+ .ascii "Hello World!\n"
+ .global _start
+
+_start:
+movl $4, %eax
+movl $1, %ebx
+movl $str, %ecx
+movl $8, %edx
+int $0x80
+movl $1, %eax
+movl $0, %ebx
+int $0x80
+
+;Compilation:
+;as code.s -o code.o
+;ld code.o -o code
+
+;Execution:
+;./code
+~~~
+
+---
+
+
+## Hello world en C++ !
+
+En C++ :
+
+~~~
+#include <iostream>
+using namespace std;
+int main() {
+   cout << "Hello World!" << endl; // This prints Hello, World!
+   return 0;
+}
+~~~
+
+---
+
+## Hello world en lua !
+
+~~~
+print("Hello World!")
+~~~
+
+---
+
 ### Les languages compilés
 
 <!-- TODO: Schéma explication des languages compilés-->
+
+```{r, echo=FALSE, fig.align="center", out.width="70%"}
+knitr::include_graphics('images/compil-vs-inter.gif') # nolint # nolint
+```
 
 ???
 
@@ -122,11 +288,40 @@ Démonstration de la compilation et de l'utilisation d'un logiciel
 
 ---
 
-## Les familles de language
+# Petit historique des langages de programmation
+
+--
+
+## C (1972)
+
+Développé par Dennis Ritchie et Kenneth Thompson, aux laboratoires Bell.
+
+Programmes codés en C : Linux/GNU
+
+--
+
+## Les dérivés du C 
+
++ C++ (1983)
++ Python (1991)
++ Lua (1993)
++ Java (1995)
++ C# (2001)
+
+Et bien d'autres !
 
 ---
 
-## Les dates clefs
+## Langages à "connaitre"
+
++ Lua (REAPER, TouchOSC)
++ JavaScript (MaxMSP, Open Stage Control, Chataîgne)
++ Faust (Développement DSP facilité)
++ Python (Boîte a outil extrêmement complète, alternative à Mathlab)
+
+En sus :
++ Markdown (prise de note, création de document)
++ Rmarkdown (alternative à LaTeK)
 
 ---
 
@@ -195,7 +390,7 @@ class: middle, center
 
 * Utilisé par la grande majorité des plug-ins du marché
 * Appartient à PACE
-* Utilisé par une grande communauté
+* Soutenu par une grande communauté
 
 ]
 
@@ -211,6 +406,10 @@ class: middle, center
 
 ]
 
+--
+
+**Waves**, **UAD**, **MeldaProduction**, sont des exemples de marques utilisant leur **propre** framwork.
+
 ---
 
 class: middle, center
@@ -222,10 +421,10 @@ class: middle, center
 ### Présentation
 
 * SDK signifie : Software Development Kit
-
-<!-- * SDK signifie : Software Development Kit
 * Outil délivré à des développeurs par des développeurs pour des développeurs
-* Exemple : SDK VST3 -->
+* Exemple : SDK VST3 de Steinberg
+
+<!-- * SDK signifie : Software Development Kit -->
 
 ---
 
@@ -251,7 +450,7 @@ class: middle, center
 
 class: middle, center
 
-# Les logiciels de gestion de version et de projet
+# Les logiciels de gestion de version (et de projet)
 
 ---
 
@@ -264,7 +463,7 @@ class: middle, center
     * Implémentation graphique
     * etc.
 * Plusieurs personnes peuvent être amenées à manipuler les mêmes fichiers
-* Certaine modification peut casser le programme, comment revenir en arrière ?
+* Certaines modifications peuvent casser le programme, comment revenir en arrière ?
 
 ---
 
