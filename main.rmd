@@ -30,7 +30,7 @@ class: middle, center
 + Les environnements de developpement
 + Les méthodes de travail
 
----
+--
 
 ## Jours 2
 
@@ -38,7 +38,7 @@ class: middle, center
 + Découverte de l'API de ReaScript
 + TP : Création de scripts
 
----
+--
 
 ## Jours 3
 
@@ -63,6 +63,8 @@ class: middle, center
 
 ---
 
+class: middle, center
+
 # Préambule
 
 ---
@@ -79,16 +81,17 @@ class: middle, center
 
 --
 
-+ Ne pas subir le marché des plug-ins
++ Mieux investir son temps et son argent
 
 ---
 
+class: middle, center
+
 # Généralités
 
+???
+
 + Qu'est ce qu'un ordinateur ?
-
---
-
 + Qu'est ce qu'un language de programmation ?
 
 ---
@@ -106,32 +109,73 @@ class: middle, center
 
 ---
 
-## Les système d'exploitation
+## Les systèmes d'exploitations
 
-+ Solutions propriétaires
-    + Windows
-    + MacOS
+.pull-left[
 
-+ Solutions libres
-    + Linux/GNU
+**Solutions propriétaires**
 
----
+```{r, echo=FALSE, fig.show='hold', fig.pos='center', out.width="10%"}
+knitr::include_graphics('images/windows.jpg') # nolint # nolint
+knitr::include_graphics('images/macos.png') # nolint # nolint
+```
+```{r, echo=FALSE, fig.show='hold', out.width="10%"}
+```
 
-## Choisir un OS ?
++ Windows (Microsoft)
++ MacOS (Apple)
 
-+ MacOS = Linux clef en main
-+ Linux = MacOS en kit
-+ Windows = ?
+    
+]
+
+.pull-right[
+
+**Solutions libres**
+
+```{r, echo=FALSE, fig.align="center", out.width="10%"}
+knitr::include_graphics('images/linux.png') # nolint # nolint
+```
+
++ Linux/GNU (Libre et gratuit)
+
+
+]
+
+--
+
+
+**Choisir son OS ?**
+
+
+--
+
++ MacOS : Linux clef en main
+
+--
+
++ Linux : MacOS en kit
+
+--
+
++ Windows : ?
 
 ---
 
 ## Informatique embarquée / informatique généraliste
 
+.pull-left[
+
 Informatique embarquée
 + Optimisé pour une tâche (exemple : console de mixage numérique)
 
+]
+
+.pull-right[
+
 Informatique de "bureau"
-+ Polyvalente
++ Polyvalente mais non spécifique
+
+]
 
 On peut également évoquer l'informatique destinée aux serveurs.
 
@@ -140,11 +184,21 @@ On peut également évoquer l'informatique destinée aux serveurs.
 ## Les défis de l'audio-numérique sur ordinateur générique
 
 + Le traitement de l'audio en temps réel !
+--
+
     + Equipement non dédié (donc non optimisé)
-    + Tous les kernels ne sont pas égaux (Générique VS low-latency VS real-time // différences de scheduler et de gestion des priorités).
+--
+    + Tous les kernels ne sont pas égaux.
+--
     + Toutes les bus de communication ne se vallent pas (USB vs PCIe par ex.)
+--
     + Tous les pilotes d'interfaces audio non plus.
+--
     + Ainsi que les logiciels ( Pro Tools & REAPER par ex. ;-) ) 
+
+???
+
+Kernels : "noyau" // Générique VS low-latency VS real-time // différences de scheduler et de gestion des priorités. // FIFO - LILO - FILO etc.
 
 ---
 
@@ -161,29 +215,104 @@ Dans les deux cas, la question est souvent : à quel prix sur le rendu audio ?
 
 ### Exemple concret : égaliseur
 
-+ ReaEQ (Cockos) : temps réel (PDC = 0 smpl) mais on observe un phénomène de cramping vers la fréquence de Nyquist.
-+ Pro-Q3 (Fab Filter) :
-    + zéro latence : temps réel sans cramping en amplitude. Cependant le déphasage généré par le filtre se réplie toujours à Nyquist.
-    + natural phase : 320 smpl de latence, plus de cramping
-    + phase linéaire : de 3072 smpl à 66560 smpl, inutilisable pour du temps réel.
+.pull-left[
+
+**ReaEQ (Cockos)**
+
+```{r, echo=FALSE, fig.align="center", out.width="85%"}
+knitr::include_graphics('images/reaeq.jpg') # nolint # nolint
+```
+
++ **temps réel**
++ Cramping vers la fréquence de Nyquist.
+
+
+]
+
+.pull-right[
+
+**Pro-Q3 (Fab Filter)** :
+
+```{r, echo=FALSE, fig.align="center", out.width="85%"}
+knitr::include_graphics('images/proq3.jpg') # nolint # nolint
+```
+
++ *zéro latence* : **temps réel**, sans cramping. Déphasage du filtre se réplie à Nyquist.
++ *natural phase* : **320 smpl** de latence, plus de cramping
++ *phase linéaire* : de **3072 smpl** à **66560 smpl**, inutilisable pour du temps réel.
+
+
+]
+
+
 
 ---
 
 ### Exemple concret : compresseur
 
-+ ReaComp (Cockos) : temps réel, mais présence d'aliasing lorsque les temps d'attaque et de release sont court.
-+ Molotok (Tokyo Dawn Lab) : trois modes, temps réel, éco et precise. Les deux derniers jouant certainement sur du sur-échantillonnage (circuit de détéction et/ou circuit de traitement).
+.pull-left[
+
+**ReaComp (Cockos)**
+
+```{r, echo=FALSE, fig.align="center", out.width="80%"}
+knitr::include_graphics('images/reacomp.png') # nolint # nolint
+```
+
++ **Temps réel**
++ **Repliement spectral** (aliasing) lorsque les temps d'attaque et de relâchement sont court.
+
+]
+
+.pull-right[
+
+**Molotok (Tokyo Dawn Lab)**
+
+```{r, echo=FALSE, fig.align="center", out.width="85%"}
+knitr::include_graphics('images/molotok.jpg') # nolint # nolint
+```
+
++ Plusieurs modes permettant d'ajuster le ratio latence/performance audio.
++ **"Alias"** en mode **temps réel**.
++ Les modes éco et précise utilise certainement du sur-échantillonnage pour réduire le repliement spectral.
+
+]
 
 ---
 
 ### Exemple concret : saturation
 
-+ Saturation (Cockos) : temps réel, alisaing (également léger en ressource).
-+ ChowTapeModel (ChowDSP) : 36 smpl par défaut. Jusqu'à 102 smpl à OS*16 en phase linéaire. Très gourmand en ressource, mais rendu "qualitatif".
+.pull-left[
+
+**Saturation (Cockos)**
+
+```{r, echo=FALSE, fig.align="center", out.width="85%"}
+knitr::include_graphics('images/saturation.png') # nolint # nolint
+```
+
++ temps réel
++ Forte présence d'alisaing
++ Léger en ressource.
+
+]
+
+.pull-right[
+
+**ChowTapeModel (LOSER)**
+
+```{r, echo=FALSE, fig.align="center", out.width="70%"}
+knitr::include_graphics('images/chowtapemodel.png') # nolint # nolint
+```
+
++ Latence de 36 smpl par défaut.
++ Jusqu'à 102 smpl de latence à OS*16 en phase linéaire.
++ Très gourmand en ressource, mais rendu "qualitatif".
+
+]
+
 
 ---
 
-### Les qualités d'un plug-in
+## Les qualités d'un plug-in
 
 + Chercher le meilleur rapport entre performance et qualité de rendu sonore
 + Stabilité sur les différents formats (VST, VST3, AAX, AU, LV2, etc.)
@@ -191,9 +320,17 @@ Dans les deux cas, la question est souvent : à quel prix sur le rendu audio ?
 
 ---
 
-## Qu'est ce que programmer
+class: middle, center
+
+# La programmation et ses langages
+
+---
+
+## Que signifie "programmer"
 
 + Donner des instructions au processeur.
++ Pour cela on utilise un langage.
++ L'utilisation d'un langage plutôt qu'un autre viendra définir un équilibre entre performance, fonctionnalités, et facilité de développement.
 
 ---
 
@@ -268,13 +405,23 @@ print("Hello World!")
 
 ---
 
-### Les languages compilés
+### Les langages compilés vs langages interprétés
 
-<!-- TODO: Schéma explication des languages compilés-->
+.pull-left[
 
-```{r, echo=FALSE, fig.align="center", out.width="70%"}
-knitr::include_graphics('images/compil-vs-inter.gif') # nolint # nolint
+```{r, echo=FALSE, fig.align="center", out.width="40%"}
+knitr::include_graphics('images/compiler.png') # nolint # nolint
 ```
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE, fig.align="center", out.width="40%"}
+knitr::include_graphics('images/interpreter.png') # nolint # nolint
+```
+
+]
 
 ???
 
@@ -282,46 +429,29 @@ Démonstration de la compilation et de l'utilisation d'un logiciel
 
 ---
 
-### Les languages interprétés
-
-<!-- TODO: Schéma explication des languages interprétés-->
-
----
-
-# Petit historique des langages de programmation
+# Langages à "connaître"
 
 --
 
-## C (1972)
-
-Développé par Dennis Ritchie et Kenneth Thompson, aux laboratoires Bell.
-
-Programmes codés en C : Linux/GNU
+Le **C** (1972), développé par par Dennis Ritchie et Kenneth Thompson, aux laboratoires Bell.
 
 --
 
-## Les dérivés du C 
-
-+ C++ (1983)
-+ Python (1991)
-+ Lua (1993)
-+ Java (1995)
-+ C# (2001)
-
-Et bien d'autres !
-
----
-
-## Langages à "connaitre"
-
++ C++ (1983, représente la majorité des applications informatiques)
 + Lua (REAPER, TouchOSC)
 + JavaScript (MaxMSP, Open Stage Control, Chataîgne)
 + Faust (Développement DSP facilité)
 + Python (Boîte a outil extrêmement complète, alternative à Mathlab)
 
+--
+
 En sus :
 + Markdown (prise de note, création de document)
 + Rmarkdown (alternative à LaTeK)
+
+???
+
+Connaître dans le sens : connaître son existance. Il ne s'agit pas d'apprendre tout ces langages.
 
 ---
 
@@ -349,21 +479,31 @@ class: middle, center
     * Un compileur / un interpréteur
     * Un gestionnaire de projet
 
----
+--
 
 **Quelques exemples**
+
+--
+
+.pull-left[
 
 * Les classiques
     * Visual Studio
     * X-Code
     * CodeBlock
+    
+]
 
 --
+
+.pull-right[
 
 * Les plus "modernes"
     * Visual Studio Code
     * Sublime text
     * PyCharm/Clion/JetBrain
+
+]
 
 ---
 
@@ -375,10 +515,12 @@ class: middle, center
 
 ### Le principe
 
+--
+
 * Proposer un socle de fonctionnalités de base :
     * Accesseur audio, une librairie graphique, blocs DSP élémentaires, etc.
 
----
+--
 
 ### Quelques exemples
 
@@ -408,7 +550,7 @@ class: middle, center
 
 --
 
-**Waves**, **UAD**, **MeldaProduction**, sont des exemples de marques utilisant leur **propre** framwork.
+**Waves**, **UAD**, **MeldaProduction**, sont des exemples de marques utilisant leur **propre** framework.
 
 ---
 
@@ -511,7 +653,7 @@ class: middle, center
 
 class: middle, center
 
-# Introduction au language lua
+# Introduction au langage lua
 
 ---
 
