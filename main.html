@@ -134,14 +134,11 @@ class: middle, center
 
 + Linux/GNU (Libre et gratuit)
 
-
 ]
 
 --
 
-
 **Choisir son OS ?**
-
 
 --
 
@@ -261,7 +258,7 @@ Dans les deux cas, la question est souvent : à quel prix sur le rendu audio ?
 
 + Plusieurs modes permettant d'ajuster le ratio latence/performance audio.
 + **"Alias"** en mode **temps réel**.
-+ Les modes éco et précise utilise certainement du sur-échantillonnage pour réduire le repliement spectral.
++ Les modes *éco* et *precise* utilisent certainement du sur-échantillonnage pour réduire le repliement spectral.
 
 ]
 
@@ -271,7 +268,7 @@ Dans les deux cas, la question est souvent : à quel prix sur le rendu audio ?
 
 .pull-left[
 
-**Saturation (Cockos)**
+**Saturation (LOSER)**
 
 &lt;img src="images/saturation.png" width="85%" style="display: block; margin: auto;" /&gt;
 
@@ -283,7 +280,7 @@ Dans les deux cas, la question est souvent : à quel prix sur le rendu audio ?
 
 .pull-right[
 
-**ChowTapeModel (LOSER)**
+**ChowTapeModel (ChowDSP)**
 
 &lt;img src="images/chowtapemodel.png" width="70%" style="display: block; margin: auto;" /&gt;
 
@@ -409,7 +406,7 @@ Démonstration de la compilation et de l'utilisation d'un logiciel
 
 ---
 
-# Langages à "connaître"
+## Langages à "connaître"
 
 --
 
@@ -437,11 +434,17 @@ Connaître dans le sens : connaître son existance. Il ne s'agit pas d'apprendre
 
 class: middle, center
 
-# Les environnements de développement
+# Les outils de développement
 
 ---
 
-## Qu'est ce qu'un IDE ?
+class: middle, center
+
+## Les IDE
+
+---
+
+### Qu'est ce qu'un IDE ?
 
 --
 
@@ -502,7 +505,7 @@ class: middle, center
 
 --
 
-### Quelques exemples
+**Quelques exemples**
 
 --
 
@@ -562,17 +565,18 @@ class: middle, center
 * Ensemble de classes, méthodes, fonctions et variable
 * Permet à deux logiciels de s'interfacer
 
----
+--
 
-### Exemples
+**Exemples**
 
-**L'API de REAPER**
+L'API ReaScript de REAPER
+L'API Javascript de MaxMSP
 
 ---
 
 class: middle, center
 
-# Les logiciels de gestion de version (et de projet)
+# Les logiciels de gestion de version
 
 ---
 
@@ -587,28 +591,148 @@ class: middle, center
 * Plusieurs personnes peuvent être amenées à manipuler les mêmes fichiers
 * Certaines modifications peuvent casser le programme, comment revenir en arrière ?
 
+
 ---
 
 ## Git
 
+
+.pull-left[
 * Créé par Linus Torvald
 * Open-source 
 * Logiciel de gestion de version le plus utilisé au monde.
+]
 
----
+--
 
-### Solutions utilisant Git
+.pull-right[
+&lt;img src="images/git.png" width="40%" style="display: block; margin: auto;" /&gt;
+]
 
+--
+
+**Solutions utilisant Git**
+
+--
+
+.pull-left[
 * GitHub
 * GitLab
 * BitBucket
 * NPM
+]
+
+.pull-right[
+&lt;img src="images/github.png" width="40%" style="display: block; margin: auto;" /&gt;
+]
+
 
 ---
 
-### Comment fonctionne GitHub
+### Comment fonctionne Git
 
-&lt;img src="images/1280px-Git_operations.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/git-schematic.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+### Un peu de jargon (1/2)
+
+.pull-left[
+~~~
+clone
+~~~
+]
+
+.pull-right[
+Permet de "cloner", télécharger un dépôt (repository)
+]
+
+--
+
+.pull-left[
+~~~
+fork
+~~~
+]
+
+.pull-right[
+Permet de copier un dépôt existant afin de le modifier sans affecter le dépôt initial.
+]
+
+--
+
+.pull-left[
+~~~
+branche
+~~~
+]
+
+.pull-right[
+Dans la philosophie git, chaque fonctionnalité d'un projet est developpé sur une branche à part. La branche principale, souvent appelée master, devrait toujours un projet en état fonctionnel.
+]
+
+--
+
+.pull-left[
+~~~
+commit
+~~~
+]
+
+.pull-right[
+Valider son travail sur le dépôt local. Est toujours associé à une description.
+]
+
+---
+
+
+### Un peu de jargon (2/2)
+
+.pull-left[
+~~~
+push
+~~~
+]
+
+.pull-right[
+Met à jours le dépôt distant à partir du dépôt local. (upload le dernier commit)
+]
+
+--
+
+.pull-left[
+~~~
+pull
+~~~
+]
+
+.pull-right[
+Met à jours le dépôt local à partir du dépôt distant. (télécharge le ou les derniers commit)
+]
+
+--
+
+.pull-left[
+~~~
+pull request
+~~~
+]
+
+.pull-right[
+Demande la permission d'appliquer les modifications d'une branche de developpement sur la branche principale
+]
+
+--
+
+.pull-left[
+~~~
+merge
+~~~
+]
+
+.pull-right[
+Fusionne une branche dans une autre
+]
 
 ---
 
@@ -623,7 +747,7 @@ class: middle, center
 + Installer Visual Studio Code
 + Installer Git
 + Créer un compte sur GitHub
-+ Cloner le repository suivant :
++ "Forker" le repository suivant :
 
 &lt;code&gt;github.com/mon/repository/ENSLL&lt;/code&gt;
 
@@ -635,20 +759,140 @@ class: middle, center
 
 ---
 
+## Généralités
+
+.pull-left[
++ Créé en 1993, au Brésil
++ Luiz Henrique de Figueiredo, Roberto Ierusalimschy et Waldemar Celes
++ Conçu afin d'être embarqué au sein d'une autre application
++ Interpréteur en C, donc largement compatible
+]
+
+.pull-right[
+&lt;img src="images/lua.png" width="25%" style="display: block; margin: auto;" /&gt;
+]
+
+Très populaire dans le développement de jeux vidéos. Utilisé également dans le réseau et dans l'informatique embarquée.
+
+On le retrouve aussi dans les logiciels **REAPER** et **TouchOSC** dans le monde de l'audio.
+
+---
+
+## Les variables
+
+Pour déclarer une variable, il suffit de lui donner un nom et une valeur.
 
 
+```lua
+foo = 3 --créer une variable, nommée "foo", stockant le nombre 3
+```
+
+Un ensemble de charactères précédés par "--" est considéré comme un commentaire.
+
+La bonne pratique consiste à toujours précéder la déclaration d'une variable par le mot clef "local". Cela permet de limiter la zone de définition de la variable.
 
 
+```lua
+local foo = 3
+```
+
+---
+
+## Les types de variables
 
 
+```lua
+local myNumber  = 3                --cette variable est un nombre
+local myString  = "Hello, World!"  --cette variable est une chaine de charactère (string)
+local myBool    = true             --cette variable est un booléen
+local myNil     = nil              --cette variable ne possède aucune valeur
+```
+
+Le typage en lua est extrêmement faible. Une variable peut changer de type a n'importe quel moment, sans contraintes.
 
 
+```lua
+local myNumber  = 3                --cette variable est un nombre
+myNumber        = "Hello, World!"  --est-ce bien pertinent ?
+```
+---
+
+## Les opérations
 
 
+```lua
+local a  = 3+2                      --addition
+local b  = 5-7                      --soustraction
+local c  = 2*5                      --multiplication
+local d  = 10/2                     --division
+
+local e  = "Hello,".." World!"      --concaténation
+```
+
+Il est également possible d'appliquer des opérations sur des variables
 
 
+```lua
+local a = 2
+local b = 8
+
+local c = (a+b)/4
+```
+
+---
+
+## Quelques fonctions
 
 
+```lua
+print("Hello, World!")              --Affiche la chaîne de charactères "Hello, World!" dans le terminal. Pratique pour débugger surtout dans REAPER.
+
+local foo = tostring(3)
+print(foo)                          --Affiche la chaîne de charactères "3" dans le terminal.
+
+local bar = tonumber("3")           
+print(bar)                          --Affiche le nombre 3 dans le terminal.
+
+local myType = type(foo)            --La fonction type retourne une chaîne de charactère indiquant le type de la variable.
+print(foo)                          -- Affiche la chaîne de charactères "number" dans le terminal
+```
+
+---
+
+## Les conditions
+
+
+```lua
+local a = 3
+local b = 2
+
+local result = false
+
+--Les symboles de comparaison sont == &gt;= &lt;= &gt; &lt; ~=
+if a == b then
+    result = true
+end
+
+print(result)
+```
+
+
+```lua
+local a = 3
+local b = 2
+
+local myString = nil
+
+if a &gt;= b then
+    myString == "This is true"
+else
+    myString == "This is false"
+end
+
+print(result)
+```
+
+---
 
 
 
@@ -780,6 +1024,7 @@ Le C en sms
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
+"ratio": "16:9",
 "highlightStyle": "github",
 "highlightLines": true,
 "countIncrementalSlides": false
