@@ -27,16 +27,16 @@ class: middle, center
 
 ## Jours 1
 
-+ Rappels sur l'informatique orienté audio
++ Rappels sur l'informatique orientée audio
 + Historique de la programmation
-+ Les environnements de developpement
++ Les environnements de développement
 + Les méthodes de travail
 
 --
 
 ## Jours 2
 
-+ Introduction au language lua
++ Introduction au langage lua
 + Découverte de l'API de ReaScript
 + TP : Création de scripts
 
@@ -44,7 +44,7 @@ class: middle, center
 
 ## Jours 3
 
-+ Introduction au language de programmation EEL2
++ Introduction au langage de programmation EEL2
 + Présentation du framework JSFX
 + TP : Créer un plug-in audio
 
@@ -53,8 +53,8 @@ class: middle, center
 # Objectifs
 
 + Découvrir le monde de la programmation
-+ Ajouter la programmation dans sa boîte à outil d'ingénieur du son
-+ Comprendre les tenants et les aboutissant de la création d'un plug-in audio
++ Ajouter la programmation dans sa boite à outils d'ingénieur du son
++ Comprendre les tenants et les aboutissants de la création d'un plug-in audio
 
 ---
 
@@ -93,15 +93,15 @@ class: middle, center
 
 ???
 
-+ Qu'est ce qu'un ordinateur ?
-+ Qu'est ce qu'un language de programmation ?
++ Qu'est-ce qu'un ordinateur ?
++ Qu'est-ce qu'un langage de programmation ?
 
 ---
 
 ## Les ordinateurs
 
 + Ensemble de composants : Processeurs + Mémoires
-    + Processeurs : CPU (plusieurs coeurs ou plusieurs CPU), GPU
+    + Processeurs : CPU (plusieurs cœurs ou plusieurs CPU), GPU
     + Mémoire de stockage, mémoire vive, etc.
 
 + Ensemble de logiciels
@@ -111,7 +111,7 @@ class: middle, center
 
 ---
 
-## Les systèmes d'exploitations
+## Les systèmes d'exploitation
 
 .pull-left[
 
@@ -166,7 +166,7 @@ Informatique embarquée
 .pull-right[
 
 Informatique de "bureau"
-+ Polyvalente mais non spécifique
++ Polyvalente, mais non spécifique
 
 ]
 
@@ -174,7 +174,7 @@ On peut également évoquer l'informatique destinée aux serveurs.
 
 ---
 
-## Les défis de l'audio-numérique sur ordinateur générique
+## Les défis de l'audionumérique sur ordinateur générique
 
 + Le traitement de l'audio en temps réel !
 --
@@ -197,7 +197,7 @@ Kernels : "noyau" // Générique VS low-latency VS real-time // différences de 
 
 ## Les défis du développement orienté audio
 
-Au delà de la qualité sonore d'un plug-in
+Au-delà de la qualité sonore d'un plug-in
 
 + Optimiser la charge CPU
 + Prendre le minimum de temps possible
@@ -226,7 +226,7 @@ Dans les deux cas, la question est souvent : à quel prix sur le rendu audio ?
 
 &lt;img src="images/proq3.jpg" width="85%" style="display: block; margin: auto;" /&gt;
 
-+ *zéro latence* : **temps réel**, sans cramping. Déphasage du filtre se réplie à Nyquist.
++ *zéro latence* : **temps réel**, sans cramping. Déphasage du filtre se replie à Nyquist.
 + *natural phase* : **320 smpl** de latence, plus de cramping
 + *phase linéaire* : de **3072 smpl** à **66560 smpl**, inutilisable pour du temps réel.
 
@@ -246,7 +246,7 @@ Dans les deux cas, la question est souvent : à quel prix sur le rendu audio ?
 &lt;img src="images/reacomp.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 + **Temps réel**
-+ **Repliement spectral** (aliasing) lorsque les temps d'attaque et de relâchement sont court.
++ **Repliement spectral** (aliasing) lorsque les temps d'attaque et de relâchement sont courts.
 
 ]
 
@@ -258,7 +258,7 @@ Dans les deux cas, la question est souvent : à quel prix sur le rendu audio ?
 
 + Plusieurs modes permettant d'ajuster le ratio latence/performance audio.
 + **"Alias"** en mode **temps réel**.
-+ Les modes *éco* et *precise* utilisent certainement du sur-échantillonnage pour réduire le repliement spectral.
++ Les modes *éco* et *precise* utilisent certainement du suréchantillonnage pour réduire le repliement spectral.
 
 ]
 
@@ -315,21 +315,21 @@ class: middle, center
 
 ---
 
-## Les différents types de languages
+## Les différents types de langages
 
 Du niveau le plus bas au plus haut (du plus proche de la machine au plus proche de l'utilisateur)
 
 --
 
-+ Le language assembleur
++ Le langage assembleur
 
 --
 
-+ Les languages compilés
++ Les langages compilés
 
 --
 
-+ Les languages interprétés
++ Les langages interprétés
 
 ---
 
@@ -410,7 +410,7 @@ Démonstration de la compilation et de l'utilisation d'un logiciel
 
 --
 
-Le **C** (1972), développé par par Dennis Ritchie et Kenneth Thompson, aux laboratoires Bell.
+Le **C** (1972), développé par Dennis Ritchie et Kenneth Thompson, aux laboratoires Bell.
 
 --
 
@@ -418,17 +418,17 @@ Le **C** (1972), développé par par Dennis Ritchie et Kenneth Thompson, aux lab
 + Lua (REAPER, TouchOSC)
 + JavaScript (MaxMSP, Open Stage Control, Chataîgne)
 + Faust (Développement DSP facilité)
-+ Python (Boîte a outil extrêmement complète, alternative à Mathlab)
++ Python (Boîte à outils extrêmement complète, alternative à Mathlab)
 
 --
 
 En sus :
-+ Markdown (prise de note, création de document)
++ Markdown (prise de note, création de documents)
 + Rmarkdown (alternative à LaTeK)
 
 ???
 
-Connaître dans le sens : connaître son existance. Il ne s'agit pas d'apprendre tout ces langages.
+Connaître dans le sens : connaître son existence. Il ne s'agit pas d'apprendre tous ces langages.
 
 ---
 
@@ -444,7 +444,7 @@ class: middle, center
 
 ---
 
-### Qu'est ce qu'un IDE ?
+### Qu'est-ce qu'un IDE ?
 
 --
 
@@ -514,8 +514,8 @@ class: middle, center
 **JUCE**
 
 * Utilisé par la grande majorité des plug-ins du marché
-* Appartient à PACE
-* Soutenu par une grande communauté
+* Appartiens à PACE
+S* Soutenu par une grande communauté
 
 ]
 
@@ -563,7 +563,7 @@ class: middle, center
 
 * API signifie : Application Programming Interface
 * Ensemble de classes, méthodes, fonctions et variable
-* Permet à deux logiciels de s'interfacer
+* Permets à deux logiciels de s'interfacer
 
 --
 
@@ -580,10 +580,10 @@ class: middle, center
 
 ---
 
-## Travail colaboratif
+## Travail collaboratif
 
 * Le développement est un travail d'équipe
-    * Architècte logiciel
+    * Architecte logiciel
     * Implémentation bas niveau, framework
     * Implémentation DSP
     * Implémentation graphique
@@ -656,7 +656,7 @@ fork
 ]
 
 .pull-right[
-Permet de copier un dépôt existant afin de le modifier sans affecter le dépôt initial.
+Permets de copier un dépôt existant afin de le modifier sans affecter le dépôt initial.
 ]
 
 --
@@ -668,7 +668,7 @@ branche
 ]
 
 .pull-right[
-Dans la philosophie git, chaque fonctionnalité d'un projet est developpé sur une branche à part. La branche principale, souvent appelée master, devrait toujours un projet en état fonctionnel.
+Dans la philosophie git, chaque fonctionnalité d'un projet est développée sur une branche à part. La branche principale, souvent appelée master, devrait toujours un projet en état fonctionnel.
 ]
 
 --
@@ -695,7 +695,7 @@ push
 ]
 
 .pull-right[
-Met à jours le dépôt distant à partir du dépôt local. (upload le dernier commit)
+Mets à jour le dépôt distant à partir du dépôt local. (upload le dernier commit)
 ]
 
 --
@@ -707,7 +707,7 @@ pull
 ]
 
 .pull-right[
-Met à jours le dépôt local à partir du dépôt distant. (télécharge le ou les derniers commit)
+Mets à jour le dépôt local à partir du dépôt distant. (télécharge le ou les derniers commit)
 ]
 
 --
@@ -719,7 +719,7 @@ pull request
 ]
 
 .pull-right[
-Demande la permission d'appliquer les modifications d'une branche de developpement sur la branche principale
+Demande la permission d'appliquer les modifications d'une branche de développement sur la branche principale
 ]
 
 --
@@ -742,7 +742,7 @@ class: middle, center
 
 ---
 
-## A faire
+## À faire
 
 + Installer Visual Studio Code
 + Installer Git
@@ -787,9 +787,9 @@ Pour déclarer une variable, il suffit de lui donner un nom et une valeur.
 foo = 3 --créer une variable, nommée "foo", stockant le nombre 3
 ```
 
-Un ensemble de charactères précédés par "--" est considéré comme un commentaire.
+Un ensemble de caractères précédés par "--" est considéré comme un commentaire.
 
-La bonne pratique consiste à toujours précéder la déclaration d'une variable par le mot clef "local". Cela permet de limiter la zone de définition de la variable.
+La bonne pratique consiste à toujours précéder la déclaration d'une variable par le mot-clef "local". Cela permet de limiter la zone de définition de la variable.
 
 
 ```lua
@@ -845,7 +845,7 @@ local c = (a+b)/4
 
 
 ```lua
-print("Hello, World!")              --Affiche la chaîne de charactères "Hello, World!" dans le terminal. Pratique pour débugger surtout dans REAPER.
+print("Hello, World!")              --Affiche la chaîne de charactères "Hello, World!" dans le terminal. Pratique pour débugger.
 
 local foo = tostring(3)
 print(foo)                          --Affiche la chaîne de charactères "3" dans le terminal.
@@ -876,6 +876,8 @@ end
 print(result)
 ```
 
+---
+
 
 ```lua
 local a = 3
@@ -889,13 +891,621 @@ else
     myString == "This is false"
 end
 
-print(result)
+print(myString)
 ```
 
 ---
 
 
+```lua
 
+-- il est possible d'utiliser les mots clefs "and" et "or" pour indiquer des relations de condition plus complexes
+
+if a and b then -- "if a" permet de vérifier si a n'est pas égal à nil. Idem pour b.
+    -- faire quelque chose
+elseif a or b then
+    -- faire autre chose
+else
+    -- choix par défaut
+end
+
+```
+
+---
+
+## Les boucles "for"
+
+
+```lua
+-- les boucles "for" permettent de boucler un mécanisme tant qu'une variable n'atteint pas une certaine valeur.
+
+for i=0, 10 do --incrément de 0 à 10 par pas de 1 (valeur par défaut)
+    print(i)
+end
+
+for j=10, 0, -1 do --décrément de 10 à 0 par pas de 1
+    print(j)
+end
+
+for k=0, 10, 2 do --incrémente de 0 à 10 par pas de 2
+    print(k)
+end
+
+```
+
+---
+
+## Les fonctions
+
+
+```lua
+
+function myFunction(argument1) -- définition de la fonction "myFunction" qui prend un argument "argument1"
+    argument1 = argument1 + 1
+    return argument1
+end
+
+local a = 2
+a = myFunction(a) --appel de la fonction "myFunction"
+print(a)
+
+```
+
+
+```lua
+
+function isEven(input)
+    if input % 2 == 0 then
+        return true
+    else
+        return false
+    end
+end
+
+local a = 2
+print(isEven(a))
+
+```
+
+---
+
+class: middle, center
+# TP - Scripting dans REAPER
+
+---
+
+## Créer une fonction "print()"
+
+But : créer une fonction pour afficher n'importe n'importe quel type de variable dans la console de REAPER.
+
+Etapes :
++ Touver la fonction "ShowConsoleMsg()" dans l'API de REAPER
++ Appeler la fonction "ShowConsoleMsg()" à travers une fonction "print()" prenant la valeur à afficher en argument
++ Attention au type de la valeur à afficher !
+
+---
+
+## Compter le nombre de pistes dans la session et afficher ce nombre
+
+1. Compter le nombre de pistes
+2. Afficher ce nombre
+
+---
+
+## Afficher le nom des pistes sélectionnées dans le terminal
+
+1. Compter le nombre de pistes sélectionnées
+2. Pour chaque piste sélectionnée, obtenir son nom.
+3. Afficher le nom dans le terminal.
+
+---
+
+## Réinitialiser tous les faders de la session à 0 dB
+
+1. Compter le nombre de pistes dans la session
+2. Pour chaque piste, réinitialiser le fader de niveau à 0 dB
+
+???
+
+number reaper.SetMediaTrackInfo_Value(MediaTrack tr, string parmname)
+
+---
+
+## Baisser le volume des pistes sélectionnées de 3 dB
+
+---
+
+## Déplacer les pistes sélectionnées dans une nouvelle piste dossier
+
+Etapes :
+
+1. Trouver la fonction de l'API permettant de réorganiser les pistes
+2. Créer une nouvelle piste
+3. Déplacer les pistes sélectionnées comme filles de la piste créée à l'étape (2)
+
+???
+
+1. La fonction à appeler est reaper.ReorderSelectedTracks(beforeTrackIdx, makePrevFolder)
+2. Il faut obtenir la première piste de la sélection de pistes
+3. Il faut obtenir l'index de la première piste sélectionnée
+4. Il faut créer une piste à l'idx de la piste séléctionnée-1
+
+
+```lua
+local tr1 = reaper.GetSelectedTrack(0,0)
+local tr1Idx = reaper.GetMediaTrackInfo_Value(tr1, "IP_TRACKNUMBER")
+reaper.InsertTrackAtIndex(tr1Idx-1, true)
+reaper.ReorderSelectedTracks(tr1Idx, 1)
+```
+
+---
+
+## Afficher le timecode de début et de fin des objets sélectionnés dans la console
+
+---
+
+## Couper l'objet sous le curseur de la souris au niveau du curseur de la souris
+
+---
+
+class: middle, center
+
+# JSFX &amp; EEL2
+
+---
+
+## Kézako ?
+
++ JSFX : Jesus Sonic Effects
++ EEL2 : un autre acronyme que je n'ai pas su retrouver.
+
+Les JSFX sont des effets, audio ou midi, similaire à un VST, mais ne nécessitant pas la même lourdeur de développement. Le langage utilisé pour les JSFX est l'EEL2, dont voici quelques avantages :
+
++ Les variables n'ont pas besoin d'être déclarées, sont globales par défaut, et sont de type "double"
++ Chaque instruction se conclut par un point-virgule ";"
++ La gestion de la mémoire se fait automatiquement
+
+Cependant, la syntaxe est moins accueillante que le lua.
+
+---
+
+## Structure des fichiers JSFX
+
+.pull-left[
+
+
+```eel2
+desc:new effect
+
+slider1:gain_db=0&lt;-150,12,1&gt;gain (dB)
+
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+@init
+last_gain=10^(gain_db/20);
+
+@slider
+next_gain=10^(gain_db/20);
+
+@block
+d_gain = (next_gain - last_gain)/samplesblock;
+
+@sample
+spl0 *= last_gain;
+spl1 *= last_gain;
+last_gain += d_gain;
+```
+
+]
+
+.pull-right[
+
+Explication des différentes sections :
+
++ Entête : permets de définir le nom du PI, les noms des entrées, les contrôles ou des fonctions (code).
+
++ @init : cette section de code est exécutée à l'instanciation de l'effet.
+
++ @slider : cette section de code est exécutée dès qu'un slider est touché/modifié
+
++ @block : cette section de code est exécutée à chaque nouveau bloc d'échantillons
+
++ @sample : cette section de code est exécutée à chaque échantillon
+
+]
+
+---
+
+## Ressources de travail
+
+Développer, c'est avant tout se documenter !
+
++ Documentation du SDK JSFX : http://reaper.fm/sdk/js/js.php
++ Votre moteur de recherche préféré
+
+&gt; Rappelons que nous, les concepts de programmation sont toujours semblables, c'est la manière de les mettre en application dans le langage qui change.
+&gt; Ce que nous avons appris en lua peut nous servir ici aussi.
+
+---
+
+class: center, middle
+
+# TP JSFX
+
+---
+
+## Contrôle de volume (1/2)
+
+.pull-left[
+
+
+```eel2
+desc:new effect
+
+slider1:gain_db=0&lt;-150,12,1&gt;gain (dB)
+
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+@init
+last_gain=10^(gain_db/20);
+
+@slider
+next_gain=10^(gain_db/20);
+
+@block
+d_gain = (next_gain - last_gain)/samplesblock;
+
+@sample
+spl0 *= last_gain;
+spl1 *= last_gain;
+last_gain += d_gain;
+```
+
+]
+
+.pull-right[
+
+Explication de son fonctionnement :
+
++ "gain_db" est notre unique contrôle, créé grâce au mot-clef "slider1". La syntaxe est la suivante : 
+
+```eel2
+slidern=monParam=initVal&lt;minVal,maxVal,step&gt;Param.
+```
+
++ On initialise la variable "last_gain" en convertissant la valeur du slider "gain_db" en linéaire.
+
++ Quand le slider de gain bouge, on calcule la valeur (linéaire) de "next_gain" à partir de la valeur du slider "gain_db".
+
+]
+
+---
+
+## Contrôle de volume (2/2)
+
+.pull-left[
+
+
+```eel2
+desc:new effect
+
+slider1:gain_db=0&lt;-150,12,1&gt;gain (dB)
+
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+@init
+last_gain=10^(gain_db/20);
+
+@slider
+next_gain=10^(gain_db/20);
+
+@block
+d_gain = (next_gain - last_gain)/samplesblock;
+
+@sample
+spl0 *= last_gain;
+spl1 *= last_gain;
+last_gain += d_gain;
+```
+
+]
+
+.pull-right[
+
+Explication de son fonctionnement :
+
++ À chaque bloc, on calcul "d_gain" qui est la différence entre le gain actuel appliqué et le gain souhaité, moyennée par le nombre d'échantillons dans un bloc (sampleblock). Ce mécanisme permet d'interpoler le changement de volume en le faisant opérer sur le temps d'un bloc.
+
++ spl0 et spl1 correspondent respectivement aux échantillons des canaux 0 et 1 (ou 1 et 2 ;) ).
+
++ L'opérateur "*=" permet de multiplier la variable par une autre.
+
++ On multiplie les échantillons de chaque canal par la variable "last_gain" puis on actualise "last_gain" en lui ajoutant "d_gain".
+
+]
+
+---
+
+## Panner
+
++ On veut un réglage pour panner le signal en entré (mono ou stéréo) 
+
++ On peut penser à un système de deux contrôles de volume, un pour le canal 1 et un pour le canal 2.
+
+---
+
+## Panner (correction)
+
+.pull-left[
+
+```eel2
+desc:ENSLL Panner
+
+slider1:pan=0&lt;-100,100,1&gt;pan (%)
+
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+@init
+last_gainL=cos($pi*(pan+100)/400);
+last_gainR=sin($pi*(pan+100)/400);
+
+@slider
+next_gainL=cos($pi*(pan+100)/400);
+next_gainR=sin($pi*(pan+100)/400);
+
+@block
+d_gainL = (next_gainL - last_gainL)/samplesblock;
+d_gainR = (next_gainR - last_gainR)/samplesblock;
+
+@sample
+spl0 *= last_gainL;
+spl1 *= last_gainR;
+last_gainL += d_gainL;
+last_gainR += d_gainR;
+```
+]
+
+.pull-right[
+
++ Pour chaque canal, on calcule un coefficient d'atténuation à partir de fonction sinus ou cosinus.
+
++ Pour exploiter nos fonctions cos/sin, il convient de mettre notre slider à l'échelle (entre 0 et pi/2)
+
++ Le choix du pourcentage pour la valeur de pan paraît plus adéquat pour l'expérience utilisateur que d'afficher une valeur comprise entre 0 et pi/2.
+
++ On garde la même stratégie d'interpolation que dans le contrôle de volume.
+
+]
+
+---
+
+## Clipper
+
++ En analogique, "clipper" c'est quand la tension du signal d'entré excède la tension d'alimentation.
+
++ En numérique, "clipper" c'est dépasser le 0 dBFS en 24bit. En linéaire, un échantillon "clip" quand sa valeur dépasse 1.
+
++ Nous pouvons donc imaginer un système de seuil. Lorsque le signal en entré dépasse le seuil, on retourne la valeur du seuil.
+
+---
+
+## Clipper (correction)
+
+.pull-left[
+
+```eel2
+
+desc:ENSLL Clipper
+
+slider1:threshold_db=0&lt;-150,0,1&gt;Threshold (dB)
+
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+@init
+clip=10^(threshold_db/20);
+
+@slider
+clip=10^(threshold_db/20);
+
+@sample
+spl0 &gt; clip ? spl0=clip;
+spl1 &gt; clip ? spl1=clip;
+
+```
+]
+
+.pull-right[
+
++ On propose un réglage de seuil, en dB, à l'utilisateur.
+
++ On calcule la valeur en linéaire
+
++ Si la valeur de l'échantillon dépasse le seuil, on retourne la valeur du seuil à l'échantillon
+
+&gt; Parfaite implémentation de saturation pour écouter le repliement spectral !
+
+]
+
+---
+
+## Tremolo
+
++ Un trémolo permet de moduler l'intensité sonore d'une source en fonction d'un générateur basse fréquence "LFO"
+
++ Une implémentation simple d'un LFO peut se faire à travers une fonction sinus (ou cosinus). `\(y = sin(2\pi \times f+\phi)\)` . Rappelons ici que la fréquence est égale à l'inverse de la période. La période étant un temps, il est possible de l'exprimer en échantillon.
+
++ Bonus : comment pourrait-on différencier le traitement du canal gauche du canal droit, avec une notion de largeur stéréophonique ?
+
+---
+
+## Tremolo (correction)
+
+.pull-left[
+
+```eel2
+
+desc:ENSLL Tremolo
+
+slider1:rate=4&lt;0.1,20,0.1&gt;Rate (Hz)
+slider2:stereoWidth=0&lt;0,180,1&gt;Stereo Width (°)
+
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+@init
+pos=0;
+
+@slider
+adv=2*$pi*rate/srate;
+stereoWidth_rad=stereoWidth*0.01745329;
+
+@sample
+spl0 *= cos(pos);
+spl1 *= cos(pos+stereoWidth_rad);
+
+pos+=adv;
+
+```
+]
+
+.pull-right[
+
++ Un slider pour la vitesse de modulation, un second pour la largeur stéréophonique
+
++ On initialise une variable "pos" (position) à zéro. C'est cette variable va généré le mouvement des LFO
+
++ À chaque interaction avec les sliders, on calcule une variable d'avancement des LFO "adv" et on convertit la largeur stéréophonique en radian.
+
++ On applique le coefficient "cos(pos)" aux deux canaux. On gère la largeur stéréophonique par un décalage de phase à l'origine entre les LFO des deux canaux
+
++ La dernière ligne permet de mettre en place l'animation du LFO. Rappelons que les fonctions sinus et cosinus cycles sur `\(2\pi\)`, on peut donc laisser la variable "pos" croître sans soucis.
+
+]
+
+---
+
+## Délai de remise en phase
+
++ Pour retard un signal, il faut l'enregistrer, puis le relire en temps différé.
+
++ Il faut donc :
+    + Une mémoire tampon (buffer), qui prendra la forme d'un tableau dans lequel on stockera des données.
+    + Une tête d'enregistrement et une tête de lecture, qui prendront la forme de deux variables qui seront incrémentées à chaque nouvel échantillon.
+    + La différence entre les valeurs des deux têtes de lecture correspondra au délai de relecture.
+    + Le temps de délai sera exprimé en échantillons pour l'utilisateur.
+
+---
+
+## Délai de remise en phase (correction)
+
+.pull-left[
+
+```eel2
+
+desc:ENSLL Sample delay
+
+slider1:delay=0&lt;0,960,1&gt;Delay (smpl)
+
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+@init
+buf = 0;
+bufSize = 1920;
+recPos = 0;
+readPos = recPos-delay;
+
+@slider
+readPos = recPos-delay;
+
+@block
+
+@sample
+recPos &gt; bufSize ? recPos = 0;
+readPos &gt; bufSize ? readPos = 0;
+
+
+buf[recPos]=spl0;
+buf[recPos+1]=spl1;
+
+spl0=buf[readPos];
+spl1=buf[readPos+1];
+
+readPos += 2;
+recPos += 2;
+
+```
+]
+
+.pull-right[
+
++ Dans cette implémentation, on n’utilisera qu'un seul buffer, on multipliera donc sa taille par deux, car nous stockons les échantillons des deux canaux a l'intérieur.
+
++ On choisit comme taille maximale du buffer la taille maximale de délai autorisée. Ici 960 samples, soit 20 ms à 48kHz.
+
++ Comme on choisit de stocker tous les échantillons dans le même buffer, on va attribuer les index pairs aux canal 1 et les les index impairs au canal 2. Suite à cette optimisation, il faut donc incrémenter nos têtes de lecture de 2, tous les échantillons.
+
++ On aurait pu choisir d'utiliser autant de buffer que de canaux.
+
+]
+
+---
+
+## Sujet libre !
+
+Quelques propositions :
+
++ Un pan en gain et délai
+
++ Un chorus
+
++ Un flanger
+
++ Un looper
+
++ Un écho
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 
 # Jours 1
 
@@ -997,7 +1607,7 @@ De l’importance de bien commenter
 - Faire un fader unity
 - Découper un objet avec le curseur de la souris, sans déplacer la tête de lecture
 - Créer une piste auxiliaire pour les pistes sélectionnées
-- Créer une piste auxiliaire par pistes séléctionnées
+- Créer une piste auxiliaire par pistes sélectionnées
 
 # Jours 3
 
