@@ -407,7 +407,7 @@ print("Hello World!")
 
 .pull-left[
 
-```{r, echo=FALSE, fig.align="center", out.width="40%"}
+```{r, echo=FALSE, fig.align="center", out.width="35%"}
 knitr::include_graphics('images/compiler.png') # nolint # nolint
 ```
 
@@ -415,7 +415,7 @@ knitr::include_graphics('images/compiler.png') # nolint # nolint
 
 .pull-right[
 
-```{r, echo=FALSE, fig.align="center", out.width="40%"}
+```{r, echo=FALSE, fig.align="center", out.width="35%"}
 knitr::include_graphics('images/interpreter.png') # nolint # nolint
 ```
 
@@ -535,8 +535,8 @@ class: middle, center
 **JUCE**
 
 * Utilisé par la grande majorité des plug-ins du marché
-* Appartiens à PACE
-S* Soutenu par une grande communauté
+* Appartiens à PACES
+* Soutenu par une grande communauté
 
 ]
 
@@ -567,7 +567,7 @@ class: middle, center
 ### Présentation
 
 * SDK signifie : Software Development Kit
-* Outil délivré à des développeurs par des développeurs pour des développeurs
+* Outil délivré à des développeurs par des développeurs
 * Exemple : SDK VST3 de Steinberg
 
 <!-- * SDK signifie : Software Development Kit -->
@@ -776,7 +776,7 @@ class: middle, center
 + Créer un compte sur GitHub
 + "Forker" le repository suivant :
 
-<code>github.com/mon/repository/ENSLL</code>
+<code>https://github.com/jpecquais/ENSLL-Dev101-2022</code>
 
 ---
 
@@ -1204,118 +1204,6 @@ slidern=monParam=initVal<minVal,maxVal,step>Param.
 .pull-left[
 
 ```{eel2, echo=TRUE}
-desc:new effect
-
-slider1:gain_db=0<-150,12,1>gain (dB)
-
-in_pin:left input
-in_pin:right input
-out_pin:left output
-out_pin:right output
-
-@init
-last_gain=10^(gain_db/20);
-
-@slider
-next_gain=10^(gain_db/20);
-
-@block
-d_gain = (next_gain - last_gain)/samplesblock;
-
-@sample
-spl0 *= last_gain;
-spl1 *= last_gain;
-last_gain += d_gain;
-```
-
-]
-
-.pull-right[
-
-Explication de son fonctionnement :
-
-+ À chaque bloc, on calcul "d_gain" qui est la différence entre le gain actuel appliqué et le gain souhaité, moyennée par le nombre d'échantillons dans un bloc (sampleblock). Ce mécanisme permet d'interpoler le changement de volume en le faisant opérer sur le temps d'un bloc.
-
-+ spl0 et spl1 correspondent respectivement aux échantillons des canaux 0 et 1 (ou 1 et 2 ;) ).
-
-+ L'opérateur "*=" permet de multiplier la variable par une autre.
-
-+ On multiplie les échantillons de chaque canal par la variable "last_gain" puis on actualise "last_gain" en lui ajoutant "d_gain".
-
-]
-
----
-
-## Panner
-
-+ On veut un réglage pour panner le signal en entré (mono ou stéréo) 
-
-+ On peut penser à un système de deux contrôles de volume, un pour le canal 1 et un pour le canal 2.
-
----
-
-## Panner (correction)
-
-.pull-left[
-```{eel2, echo=TRUE}
-desc:ENSLL Panner
-
-slider1:pan=0<-100,100,1>pan (%)
-
-in_pin:left input
-in_pin:right input
-out_pin:left output
-out_pin:right output
-
-@init
-last_gainL=cos($pi*(pan+100)/400);
-last_gainR=sin($pi*(pan+100)/400);
-
-@slider
-next_gainL=cos($pi*(pan+100)/400);
-next_gainR=sin($pi*(pan+100)/400);
-
-@block
-d_gainL = (next_gainL - last_gainL)/samplesblock;
-d_gainR = (next_gainR - last_gainR)/samplesblock;
-
-@sample
-spl0 *= last_gainL;
-spl1 *= last_gainR;
-last_gainL += d_gainL;
-last_gainR += d_gainR;
-```
-]
-
-.pull-right[
-
-+ Pour chaque canal, on calcule un coefficient d'atténuation à partir de fonction sinus ou cosinus.
-
-+ Pour exploiter nos fonctions cos/sin, il convient de mettre notre slider à l'échelle (entre 0 et pi/2)
-
-+ Le choix du pourcentage pour la valeur de pan paraît plus adéquat pour l'expérience utilisateur que d'afficher une valeur comprise entre 0 et pi/2.
-
-+ On garde la même stratégie d'interpolation que dans le contrôle de volume.
-
-]
-
----
-
-## Clipper
-
-+ En analogique, "clipper" c'est quand la tension du signal d'entré excède la tension d'alimentation.
-
-+ En numérique, "clipper" c'est dépasser le 0 dBFS en 24bit. En linéaire, un échantillon "clip" quand sa valeur dépasse 1.
-
-+ Nous pouvons donc imaginer un système de seuil. Lorsque le signal en entré dépasse le seuil, on retourne la valeur du seuil.
-
----
-
-## Clipper (correction)
-
-.pull-left[
-```{eel2, echo=TRUE}
-
 desc:ENSLL Clipper
 
 slider1:threshold_db=0<-150,0,1>Threshold (dB)
@@ -1332,8 +1220,8 @@ clip=10^(threshold_db/20);
 clip=10^(threshold_db/20);
 
 @sample
-spl0 > clip ? spl0=clip;
-spl1 > clip ? spl1=clip;
+spl0 > clip ? spl0=clip; spl0 < -clip ? spl0 = -clip;
+spl1 > clip ? spl1=clip; spl1 < -clip ? spl1 = -clip;
 
 ```
 ]
