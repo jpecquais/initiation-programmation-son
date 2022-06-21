@@ -4,6 +4,7 @@ subtitle: Et son application aux métiers du son
 author: Jean-Loup Pecquais
 output:
   xaringan::moon_reader:
+    chakra: libs/remark-latest.min.js
     lib_dir: libs
     nature:
       ratio: '16:9'
