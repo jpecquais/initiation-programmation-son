@@ -41,3 +41,5 @@ vignettes/*.pdf
 
 libs/
 main_files/
+/.luarc.json
+

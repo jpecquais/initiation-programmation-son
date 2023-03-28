@@ -139,9 +139,9 @@ On peut également évoquer l'informatique destinée aux serveurs.
 
 + **Le traitement de l'audio en temps réel !**
 
-    + Equipement non dédié (donc non optimisé)
+    + Équipement non dédié (donc non optimisé)
     + Tous les kernels ne sont pas égaux.
-    + Toutes les bus de communication ne se vallent pas (USB vs PCIe par ex.)
+    + Tous les bus de communication ne se valent pas (USB vs PCIe par ex.)
     + Tous les pilotes d'interfaces audio non plus.
     + Ainsi que les logiciels ( Pro Tools & REAPER par ex. ;-) ) 
 
@@ -181,7 +181,7 @@ Dans les deux cas, la question est souvent : à quel prix sur le rendu sonore ?
 
 + *zéro latence* : **temps réel**, sans cramping. Déphasage du filtre se replie à Nyquist.
 + *natural phase* : **320 smpl** de latence, plus de cramping
-+ *phase linéaire* : de **3072 smpl** à **66560 smpl**, inutilisable pour du temps réel.
++ *phase linéaire* : de **3072 smpl** à **66560 smpl**, inutilisables pour du temps réel.
 :::
 
 ::::
@@ -225,7 +225,7 @@ Dans les deux cas, la question est souvent : à quel prix sur le rendu sonore ?
 ![](images/saturation.png)
 
 + temps réel
-+ Forte présence d'alisaing
++ Apparition de repliement spectral (aliasing)
 + Léger en ressource.
 :::
 
@@ -256,7 +256,7 @@ Dans les deux cas, la question est souvent : à quel prix sur le rendu sonore ?
 :::{.incremental}
 + Donner des instructions au processeur.
 + Pour cela on utilise un langage.
-+ L'utilisation d'un langage plutôt qu'un autre viendra définir un équilibre entre performance, fonctionnalités, et facilité de développement.
++ L'utilisation d'un langage plutôt qu'un autre viendra définir un équilibre entre performances, fonctionnalités, et facilité de développement.
 :::
 
 ## Les différents types de langages
@@ -319,15 +319,21 @@ print("Hello World!")
 
 ### Les langages compilés vs langages interprétés
 
-::::{.columns}
-:::{.column}
-![](images/compiler.png){width="38%"}
-:::
+**Language compilé**
+```{mermaid}
+flowchart LR
+  A(Fichiers sources) --> B(Compilateur)
+  B --> C(Fichier executable)
+  C --> D(Execution)
+  D --> E(Résultat)
+```
 
-:::{.column}
-![](images/interpreter.png){width="38%"}
-:::
-::::
+**Language compilé**
+```{mermaid}
+flowchart LR
+  A(Fichiers scripts) --> B(Interpréteur)
+  B --> C(Résultat)
+```
 
 :::{.notes}
 Démonstration de la compilation et de l'utilisation d'un logiciel
@@ -370,7 +376,7 @@ Connaître dans le sens : connaître son existence. Il ne s'agit pas d'apprendre
 + Environnement de développement intégré
 + Regroupe un ensemble de fonctionnalités :
     * Un éditeur de texte
-    * Une aide à l'écriture (auto-complétion)
+    * Une aide à l'écriture (autocomplétion)
     * Un terminal
     * Un compileur / un interpréteur
     * Un gestionnaire de projet
@@ -460,7 +466,7 @@ Connaître dans le sens : connaître son existence. Il ne s'agit pas d'apprendre
 
 ### Exemples
 
-+ Matplotlib pour le tracé de graphique sous python
++ Matplotlib pour le tracé de graphiques sous python
 
 # Les logiciels de gestion de version
 
@@ -518,8 +524,8 @@ Connaître dans le sens : connaître son existence. Il ne s'agit pas d'apprendre
 
 
 + **clone** : Permet de "cloner", télécharger un dépôt (repository)
-+ **fork** : Permets de copier un dépôt existant afin de le modifier sans affecter le dépôt initial.
-+ **branche** : Dans la philosophie git, chaque fonctionnalité d'un projet est développée sur une branche à part. La branche principale, souvent appelée master, devrait toujours un projet en état fonctionnel.
++ **fork** : Permet de copier un dépôt existant afin de le modifier sans affecter le dépôt initial.
++ **branche** : Dans la philosophie git, chaque fonctionnalité d'un projet est développée sur une branche à part. La branche principale, souvent appelée master, devrait toujours être un projet en état fonctionnel.
 + **commit** : Valider son travail sur le dépôt local. Est toujours associé à une description.
 
 ---
@@ -539,7 +545,7 @@ Connaître dans le sens : connaître son existence. Il ne s'agit pas d'apprendre
 + Installer [Github Desktop](https://desktop.github.com/)
 + Installer Git (devrait être inclus dans Github Desktop)
 + Créer un compte sur GitHub
-+ "Forker" le repository suivant : [https://github.com/jpecquais/ENSLL-Dev101-2022](https://github.com/jpecquais/ENSLL-Dev101-2022) <!-- edit repo !!!! -->
++ "Forker" le repository suivant : [https://github.com/jpecquais/ENSLL-Dev101-2022](https://github.com/jpecquais/initiation-programmation-son)
 
 # Introduction au langage lua
 
@@ -558,7 +564,7 @@ Connaître dans le sens : connaître son existence. Il ne s'agit pas d'apprendre
 :::
 ::::
 
-Très populaire dans le développement de jeux vidéos. Utilisé également dans le réseau et dans l'informatique embarquée.
+Très populaire dans le développement de jeux vidéo. Utilisé également dans le réseau et dans l'informatique embarquée.
 
 On le retrouve aussi dans les logiciels **REAPER** et **TouchOSC** dans le monde de l'audio.
 
@@ -747,9 +753,9 @@ print(isEven(a))
 
 But : créer une fonction pour afficher n'importe n'importe quel type de variable dans la console de REAPER.
 
-Etapes :
+Étapes :
 
-+ Touver la fonction "ShowConsoleMsg()" dans l'API de REAPER
++ Trouver la fonction "ShowConsoleMsg()" dans l'API de REAPER
 + Appeler la fonction "ShowConsoleMsg()" à travers une fonction "print()" prenant la valeur à afficher en argument
 + Attention au type de la valeur à afficher !
 
@@ -767,7 +773,7 @@ number reaper.SetMediaTrackInfo_Value(MediaTrack tr, string parmname)
 
 ## Déplacer les pistes sélectionnées dans une nouvelle piste dossier
 
-Etapes :
+Étapes :
 
 1. Trouver la fonction de l'API permettant de réorganiser les pistes
 2. Créer une nouvelle piste
@@ -799,43 +805,148 @@ reaper.ReorderSelectedTracks(tr1Idx, 1)
 
 ## Kézako ?
 
-# TP JSFX
++ [Langage de programmation](https://faust.grame.fr/) dédié au traitement du signal audio.
++ Un seul type : tout est signal
++ Développé au [GRAME](https://www.grame.fr/) (Lyon)
++ Permet de générer des externals Max/MSP, PureData, plug-ins audio (VST et AU).
++ Nécessite peu de configuration grâce à un [IDE en ligne](https://faustide.grame.fr/).
 
-## Contrôle de volume (1/2)
+## Prise en main
+
++ Tutoriel [**Quick Start**](https://faustdoc.grame.fr/manual/quick-start/) sur le site de Faust
++ [Documentation](https://faustdoc.grame.fr/) du langage.
++ [Librairie](https://faustlibraries.grame.fr/) disponible.
+
+# TP FAUST
+
+## Contrôle de volume
+
++ Créer un simple slider, permettant d'amplifier le signal sur une plage allant de -inf à +6dB (l'affichage pourra montrer les valeurs linéaires pour commencer).
+
+:::{.notes}
+```{faust}
+import("stdfaust.lib");
+process = no.noise*(vslider("Gain",1,0,2,0.01):si.smoo);
+```
+:::
 
 ## Panner
 
-+ On veut un réglage pour panner le signal en entré (mono ou stéréo) 
++ On veut un réglage pour panner le signal en entrée (mono ou stéréo) 
 + On peut penser à un système à deux contrôles de volume, un pour le canal 1 et un pour le canal 2, piloté par le même réglage
+
+:::{.notes}
+```{faust}
+import("stdfaust.lib");
+
+pi = 22/7;
+phi = (pi/2)*(hslider("Pan",0,-100,100,0.1)+100)/200;
+process = no.noise<:((*(cos(phi))),(*(sin(phi))));
+```
+:::
 
 ## Clipper
 
-+ En analogique, "clipper" c'est quand la tension du signal d'entré excède la tension d'alimentation.
-+ En numérique, "clipper" c'est dépasser le 0 dBFS en 24bit. En linéaire, un échantillon "clip" quand sa valeur dépasse 1.
-+ Nous pouvons donc imaginer un système de seuil. Lorsque le signal en entré dépasse le seuil, on retourne la valeur du seuil.
++ En analogique, "clipper" c'est quand la tension du signal d'entrée excède la tension d'alimentation.
++ En numérique, "clipper" c'est dépasser le 0 dBFS (en 24bit). En linéaire, un échantillon "clip" quand sa valeur dépasse 1.
++ Nous pouvons donc imaginer un système de seuil. Lorsque le signal en entrée dépasse le seuil, on retourne la valeur du seuil.
++ **Attention, il faut traiter les alternances positives et négatives**
+
+:::{.notes}
+```{faust}
+import("stdfaust.lib");
+
+thresh = pow(10,hslider("Threshold", 0, -30, 6, 0.1)/20);
+
+process = os.osc(440)<:(
+    ba.if(>(thresh),(thresh),_)<:
+    ba.if(<(-thresh),(-thresh))
+    );
+```
+:::
 
 ## Tremolo
 
-+ Un trémolo permet de moduler l'intensité sonore d'une source en fonction d'un générateur basse fréquence "LFO"
-+ Une implémentation simple d'un LFO peut se faire à travers une fonction sinus (ou cosinus). $y = sin(2\pi \times f+\phi)$ . Rappelons ici que la fréquence est égale à l'inverse de la période. La période étant un temps, il est possible de l'exprimer en échantillon.
-+ Bonus : comment pourrait-on différencier le traitement du canal gauche du canal droit, avec une notion de largeur stéréophonique ?
-+ Bonus 2 : Que se passe t-il, pour un son pur, si la fréquence du LFO dépasse 20 Hz et plus ?
++ Un trémolo permet de moduler l'intensité sonore d'une source en fonction d'un générateur basse fréquence "LFO" (que l'on choisira sinusoïdal).
++ **Attention à la plage de valeurs prise par une sinusoïde.**
++ Bonus : comment pourrait-on différencier le traitement du canal gauche du canal droit, avec une notion de largeur "stéréophonique" ?
++ Bonus 2 : Que se passe-t-il, pour un son pur, si la fréquence du LFO dépasse 20 Hz et plus ? Et pour un signal plus complexe ?
+
+:::{.notes}
+```{faust}
+import("stdfaust.lib");
+
+pi = 22/7;
+amount = hslider("Amount", 50,0,100,1)/100;
+freq = hslider("LFO Freq.", 4, 1, 200, 0.1);
+phi = pi*hslider("Width", 0, 0, 180, 1)/180;
+
+
+sinOsc(f,phi)=(os.oscp(f,phi)+1)/2;
+
+process = os.osc(440)<:(
+    *(sinOsc(freq,0)*amount+(1-amount)),
+    *(sinOsc(freq,phi)*amount+(1-amount))
+);
+```
+:::
 
 ## Délai de remise en phase
 
-+ Pour retard un signal, il faut l'enregistrer, puis le relire en temps différé.
-+ Il faut donc :
-    + Une mémoire tampon (buffer), qui prendra la forme d'un tableau dans lequel on stockera des données.
-    + Une tête d'enregistrement et une tête de lecture, qui prendront la forme de deux variables qui seront incrémentées à chaque nouvel échantillon.
-    + La différence entre les valeurs des deux têtes de lecture correspondra au délai de relecture.
-    + Le temps de délai sera exprimé en échantillons pour l'utilisateur.
++ On utilise la primitive @(N), ou N correspond au retard en échantillons
 
-## Sujet libre !
+## Delay & co.
 
-Quelques propositions :
++ Créer un circuit de mélange entre le son direct et un signal retardé.
++ Créer une boucle de réinjection du signal retardé sur lui-même.
++ Filtrer le signal de la répétition (passe-bas et passe-haut)
++ Moduler le signal de la répétition
 
-+ Un pan en gain et délai
-+ Un chorus
-+ Un flanger
-+ Un looper
-+ Un écho
+## Egaliseur
+
++ Utiliser les fonctions de la librairie standard de FAUST pour créer un égaliseur comprenant :
+    + Une bande shelf grave
+    + Une bande shelf aiguë
+    + Trois bandes paramétriques médiums
+
+```{faust}
+import("stdfaust.lib");
+filterBank(N) = hgroup("[2]Filter Bank",seq(i,N,oneBand(i)))
+with {
+    oneBand(j) = vgroup("[%j]Band %a",fi.peak_eq(l,f,b))
+    with {
+        a = j+1; // just so that band numbers don't start at 0
+        l = vslider("[2]Level[unit:db]",0,-24,24,0.01) : si.smoo;
+        f = hslider("[1]Freq[style:knob][scale:log]",320*(pow(10,j/2.5)),20,20000,0.01) : si.smoo;
+        b = f/hslider("[0]Q[style:knob][scale:log]",0.3,0.1,30,0.01) : si.smoo;
+    };
+};
+nBands = 3;
+
+lowShelf = hgroup("[1]Low shelf", fi.low_shelf(Ll,fl))
+with{
+    Ll = vslider("[1]Level[unit:db]",0,-27,12, 0.01):si.smoo;
+    fl = vslider("[0]Freq[scale:log][style:knob]",180,20,800, 0.01):si.smoo;
+};
+
+highShelf = hgroup("[3]High shelf", fi.high_shelf(Lh,fh))
+with{
+    Lh = vslider("[1]Level[unit:db]",0,-27,12, 0.01):si.smoo;
+    fh = vslider("[0]Freq[scale:log][style:knob]",3800,800,20000, 0.01):si.smoo;
+};
+
+
+process = hgroup("My EQ", lowShelf : filterBank(nBands) : highShelf);
+```
+
+## TP - Conception d'un compresseur
+
++ Comment fonctionne un compresseur ?
++ Quels sont ses réglages ?
++ Comment les implémenter ?
+
+## Pour finir : compiler un plug-in VST
+
++ Utiliser la fonction **export** de l'IDE en ligne.
++ Installer **Visual Studio** sous Windows ou **XCode** sous macOS.
++ Générer le projet depuis l'interface Projucer de **Juce**
