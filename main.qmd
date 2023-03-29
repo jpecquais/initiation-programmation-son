@@ -545,7 +545,7 @@ Connaître dans le sens : connaître son existence. Il ne s'agit pas d'apprendre
 + Installer [Github Desktop](https://desktop.github.com/)
 + Installer Git (devrait être inclus dans Github Desktop)
 + Créer un compte sur GitHub
-+ "Forker" le repository suivant : [https://github.com/jpecquais/ENSLL-Dev101-2022](https://github.com/jpecquais/initiation-programmation-son)
++ "Forker" le repository suivant : [https://github.com/jpecquais/initiation-programmation-son](https://github.com/jpecquais/initiation-programmation-son)
 
 # Introduction au langage lua
 
