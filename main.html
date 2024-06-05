@@ -8,7 +8,7 @@
 <link href="main_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="main_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="main_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.280">
+  <meta name="generator" content="quarto-1.4.551">
 
   <meta name="author" content="Jean-Loup Pecquais">
   <title>Initiation à la programmation</title>
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -95,7 +95,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="main_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/theme/quarto.css">
   <link href="main_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="main_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="main_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -221,7 +221,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -507,10 +508,10 @@ Jean-Loup Pecquais
 <div class="columns">
 <div class="column">
 <p><strong>Solutions propriétaires</strong></p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="images/windows.jpg" class="quarto-discovered-preview-image"></p>
+<p><img data-src="images/windows.jpg" style="width:50.0%"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img data-src="images/macos.png"></p>
@@ -699,50 +700,50 @@ Jean-Loup Pecquais
 <section id="hello-world-en-assembleur" class="slide level2">
 <h2>Hello world en assembleur !</h2>
 <p>En assembleur :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {assembly} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>str:</span>
-<span id="cb1-2"><a href="#cb1-2"></a> .ascii "Hello World!\n"</span>
-<span id="cb1-3"><a href="#cb1-3"></a> .global _start</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>_start:</span>
-<span id="cb1-6"><a href="#cb1-6"></a>movl $4, %eax</span>
-<span id="cb1-7"><a href="#cb1-7"></a>movl $1, %ebx</span>
-<span id="cb1-8"><a href="#cb1-8"></a>movl $str, %ecx</span>
-<span id="cb1-9"><a href="#cb1-9"></a>movl $8, %edx</span>
-<span id="cb1-10"><a href="#cb1-10"></a>int $0x80</span>
-<span id="cb1-11"><a href="#cb1-11"></a>movl $1, %eax</span>
-<span id="cb1-12"><a href="#cb1-12"></a>movl $0, %ebx</span>
-<span id="cb1-13"><a href="#cb1-13"></a>int $0x80</span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a>;Compilation:</span>
-<span id="cb1-16"><a href="#cb1-16"></a>;as code.s -o code.o</span>
-<span id="cb1-17"><a href="#cb1-17"></a>;ld code.o -o code</span>
-<span id="cb1-18"><a href="#cb1-18"></a></span>
-<span id="cb1-19"><a href="#cb1-19"></a>;Execution:</span>
-<span id="cb1-20"><a href="#cb1-20"></a>;./code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {assembly} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href=""></a>str:</span>
+<span id="cb1-2"><a href=""></a> .ascii "Hello World!\n"</span>
+<span id="cb1-3"><a href=""></a> .global _start</span>
+<span id="cb1-4"><a href=""></a></span>
+<span id="cb1-5"><a href=""></a>_start:</span>
+<span id="cb1-6"><a href=""></a>movl $4, %eax</span>
+<span id="cb1-7"><a href=""></a>movl $1, %ebx</span>
+<span id="cb1-8"><a href=""></a>movl $str, %ecx</span>
+<span id="cb1-9"><a href=""></a>movl $8, %edx</span>
+<span id="cb1-10"><a href=""></a>int $0x80</span>
+<span id="cb1-11"><a href=""></a>movl $1, %eax</span>
+<span id="cb1-12"><a href=""></a>movl $0, %ebx</span>
+<span id="cb1-13"><a href=""></a>int $0x80</span>
+<span id="cb1-14"><a href=""></a></span>
+<span id="cb1-15"><a href=""></a>;Compilation:</span>
+<span id="cb1-16"><a href=""></a>;as code.s -o code.o</span>
+<span id="cb1-17"><a href=""></a>;ld code.o -o code</span>
+<span id="cb1-18"><a href=""></a></span>
+<span id="cb1-19"><a href=""></a>;Execution:</span>
+<span id="cb1-20"><a href=""></a>;./code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="hello-world-en-c" class="slide level2">
 <h2>Hello world en C++ !</h2>
 <p>En C++ :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {c++} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>#include &lt;iostream&gt;</span>
-<span id="cb2-2"><a href="#cb2-2"></a>using namespace std;</span>
-<span id="cb2-3"><a href="#cb2-3"></a>int main() {</span>
-<span id="cb2-4"><a href="#cb2-4"></a>   cout &lt;&lt; "Hello World!" &lt;&lt; endl; // This prints Hello, World!</span>
-<span id="cb2-5"><a href="#cb2-5"></a>   return 0;</span>
-<span id="cb2-6"><a href="#cb2-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {c++} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href=""></a>#include &lt;iostream&gt;</span>
+<span id="cb2-2"><a href=""></a>using namespace std;</span>
+<span id="cb2-3"><a href=""></a>int main() {</span>
+<span id="cb2-4"><a href=""></a>   cout &lt;&lt; "Hello World!" &lt;&lt; endl; // This prints Hello, World!</span>
+<span id="cb2-5"><a href=""></a>   return 0;</span>
+<span id="cb2-6"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="hello-world-en-lua" class="slide level2">
 <h2>Hello world en lua !</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>print("Hello World!")</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href=""></a>print("Hello World!")</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
 <h3 id="les-langages-compilés-vs-langages-interprétés">Les langages compilés vs langages interprétés</h3>
 <p><strong>Language compilé</strong></p>
-<div class="cell" data-reveal="true">
+<div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
+<p></p><figure class=""><p></p>
 <div>
-
 <pre class="mermaid mermaid-js">flowchart LR
   A(Fichiers sources) --&gt; B(Compilateur)
   B --&gt; C(Fichier executable)
@@ -750,19 +751,22 @@ Jean-Loup Pecquais
   D --&gt; E(Résultat)
 </pre>
 </div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
 <p><strong>Language compilé</strong></p>
-<div class="cell" data-reveal="true">
+<div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
+<p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   A(Fichiers scripts) --&gt; B(Interpréteur)
   B --&gt; C(Résultat)
 </pre>
 </div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -1045,142 +1049,142 @@ Jean-Loup Pecquais
 <section id="les-variables" class="slide level2">
 <h2>Les variables</h2>
 <p>Pour déclarer une variable, il suffit de lui donner un nom et une valeur.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>foo = 3 --créer une variable, nommée "foo", stockant le nombre 3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href=""></a>foo = 3 --créer une variable, nommée "foo", stockant le nombre 3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Un ensemble de caractères précédés par “–” est considéré comme un commentaire.</p>
 <p>La bonne pratique consiste à toujours précéder la déclaration d’une variable par le mot-clef “local”. Cela permet de limiter la zone de définition de la variable.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>local foo = 3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href=""></a>local foo = 3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="les-types-de-variables" class="slide level2">
 <h2>Les types de variables</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>local myNumber  = 3                --cette variable est un nombre</span>
-<span id="cb6-2"><a href="#cb6-2"></a>local myString  = "Hello, World!"  --cette variable est une chaine de charactère (string)</span>
-<span id="cb6-3"><a href="#cb6-3"></a>local myBool    = true             --cette variable est un booléen</span>
-<span id="cb6-4"><a href="#cb6-4"></a>local myNil     = nil              --cette variable ne possède aucune valeur</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href=""></a>local myNumber  = 3                --cette variable est un nombre</span>
+<span id="cb6-2"><a href=""></a>local myString  = "Hello, World!"  --cette variable est une chaine de charactère (string)</span>
+<span id="cb6-3"><a href=""></a>local myBool    = true             --cette variable est un booléen</span>
+<span id="cb6-4"><a href=""></a>local myNil     = nil              --cette variable ne possède aucune valeur</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Le typage en lua est extrêmement faible. Une variable peut changer de type a n’importe quel moment, sans contraintes.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>local myNumber  = 3                --cette variable est un nombre</span>
-<span id="cb7-2"><a href="#cb7-2"></a>myNumber        = "Hello, World!"  --est-ce bien pertinent ?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href=""></a>local myNumber  = 3                --cette variable est un nombre</span>
+<span id="cb7-2"><a href=""></a>myNumber        = "Hello, World!"  --est-ce bien pertinent ?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="les-opérations" class="slide level2">
 <h2>Les opérations</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>local a  = 3+2                      --addition</span>
-<span id="cb8-2"><a href="#cb8-2"></a>local b  = 5-7                      --soustraction</span>
-<span id="cb8-3"><a href="#cb8-3"></a>local c  = 2*5                      --multiplication</span>
-<span id="cb8-4"><a href="#cb8-4"></a>local d  = 10/2                     --division</span>
-<span id="cb8-5"><a href="#cb8-5"></a></span>
-<span id="cb8-6"><a href="#cb8-6"></a>local e  = "Hello,".." World!"      --concaténation</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href=""></a>local a  = 3+2                      --addition</span>
+<span id="cb8-2"><a href=""></a>local b  = 5-7                      --soustraction</span>
+<span id="cb8-3"><a href=""></a>local c  = 2*5                      --multiplication</span>
+<span id="cb8-4"><a href=""></a>local d  = 10/2                     --division</span>
+<span id="cb8-5"><a href=""></a></span>
+<span id="cb8-6"><a href=""></a>local e  = "Hello,".." World!"      --concaténation</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Il est également possible d’appliquer des opérations sur des variables</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>local a = 2</span>
-<span id="cb9-2"><a href="#cb9-2"></a>local b = 8</span>
-<span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a>local c = (a+b)/4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href=""></a>local a = 2</span>
+<span id="cb9-2"><a href=""></a>local b = 8</span>
+<span id="cb9-3"><a href=""></a></span>
+<span id="cb9-4"><a href=""></a>local c = (a+b)/4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="quelques-fonctions" class="slide level2">
 <h2>Quelques fonctions</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>print("Hello, World!")              --Affiche la chaîne de charactères "Hello, World!" dans le terminal. Pratique pour débugger.</span>
-<span id="cb10-2"><a href="#cb10-2"></a></span>
-<span id="cb10-3"><a href="#cb10-3"></a>local foo = tostring(3)</span>
-<span id="cb10-4"><a href="#cb10-4"></a>print(foo)                          --Affiche la chaîne de charactères "3" dans le terminal.</span>
-<span id="cb10-5"><a href="#cb10-5"></a></span>
-<span id="cb10-6"><a href="#cb10-6"></a>local bar = tonumber("3")           </span>
-<span id="cb10-7"><a href="#cb10-7"></a>print(bar)                          --Affiche le nombre 3 dans le terminal.</span>
-<span id="cb10-8"><a href="#cb10-8"></a></span>
-<span id="cb10-9"><a href="#cb10-9"></a>local myType = type(foo)            --La fonction type retourne une chaîne de charactère indiquant le type de la variable.</span>
-<span id="cb10-10"><a href="#cb10-10"></a>print(foo)                          -- Affiche la chaîne de charactères "number" dans le terminal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href=""></a>print("Hello, World!")              --Affiche la chaîne de charactères "Hello, World!" dans le terminal. Pratique pour débugger.</span>
+<span id="cb10-2"><a href=""></a></span>
+<span id="cb10-3"><a href=""></a>local foo = tostring(3)</span>
+<span id="cb10-4"><a href=""></a>print(foo)                          --Affiche la chaîne de charactères "3" dans le terminal.</span>
+<span id="cb10-5"><a href=""></a></span>
+<span id="cb10-6"><a href=""></a>local bar = tonumber("3")           </span>
+<span id="cb10-7"><a href=""></a>print(bar)                          --Affiche le nombre 3 dans le terminal.</span>
+<span id="cb10-8"><a href=""></a></span>
+<span id="cb10-9"><a href=""></a>local myType = type(foo)            --La fonction type retourne une chaîne de charactère indiquant le type de la variable.</span>
+<span id="cb10-10"><a href=""></a>print(foo)                          -- Affiche la chaîne de charactères "number" dans le terminal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="les-conditions" class="slide level2">
 <h2>Les conditions</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>local a = 3</span>
-<span id="cb11-2"><a href="#cb11-2"></a>local b = 2</span>
-<span id="cb11-3"><a href="#cb11-3"></a></span>
-<span id="cb11-4"><a href="#cb11-4"></a>local result = false</span>
-<span id="cb11-5"><a href="#cb11-5"></a></span>
-<span id="cb11-6"><a href="#cb11-6"></a>--Les symboles de comparaison sont == &gt;= &lt;= &gt; &lt; ~=</span>
-<span id="cb11-7"><a href="#cb11-7"></a>if a == b then</span>
-<span id="cb11-8"><a href="#cb11-8"></a>    result = true</span>
-<span id="cb11-9"><a href="#cb11-9"></a>end</span>
-<span id="cb11-10"><a href="#cb11-10"></a></span>
-<span id="cb11-11"><a href="#cb11-11"></a>print(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href="#cb12-1"></a>local a = 3</span>
-<span id="cb12-2"><a href="#cb12-2"></a>local b = 2</span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a>local myString = nil</span>
-<span id="cb12-5"><a href="#cb12-5"></a></span>
-<span id="cb12-6"><a href="#cb12-6"></a>if a &gt;= b then</span>
-<span id="cb12-7"><a href="#cb12-7"></a>    myString == "This is true"</span>
-<span id="cb12-8"><a href="#cb12-8"></a>else</span>
-<span id="cb12-9"><a href="#cb12-9"></a>    myString == "This is false"</span>
-<span id="cb12-10"><a href="#cb12-10"></a>end</span>
-<span id="cb12-11"><a href="#cb12-11"></a></span>
-<span id="cb12-12"><a href="#cb12-12"></a>print(myString)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href="#cb13-1"></a></span>
-<span id="cb13-2"><a href="#cb13-2"></a>-- il est possible d'utiliser les mots clefs "and" et "or" pour indiquer des relations de condition plus complexes</span>
-<span id="cb13-3"><a href="#cb13-3"></a></span>
-<span id="cb13-4"><a href="#cb13-4"></a>if a and b then -- "if a" permet de vérifier si a n'est pas égal à nil. Idem pour b.</span>
-<span id="cb13-5"><a href="#cb13-5"></a>    -- faire quelque chose</span>
-<span id="cb13-6"><a href="#cb13-6"></a>elseif a or b then</span>
-<span id="cb13-7"><a href="#cb13-7"></a>    -- faire autre chose</span>
-<span id="cb13-8"><a href="#cb13-8"></a>else</span>
-<span id="cb13-9"><a href="#cb13-9"></a>    -- choix par défaut</span>
-<span id="cb13-10"><a href="#cb13-10"></a>end</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href=""></a>local a = 3</span>
+<span id="cb11-2"><a href=""></a>local b = 2</span>
+<span id="cb11-3"><a href=""></a></span>
+<span id="cb11-4"><a href=""></a>local result = false</span>
+<span id="cb11-5"><a href=""></a></span>
+<span id="cb11-6"><a href=""></a>--Les symboles de comparaison sont == &gt;= &lt;= &gt; &lt; ~=</span>
+<span id="cb11-7"><a href=""></a>if a == b then</span>
+<span id="cb11-8"><a href=""></a>    result = true</span>
+<span id="cb11-9"><a href=""></a>end</span>
+<span id="cb11-10"><a href=""></a></span>
+<span id="cb11-11"><a href=""></a>print(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href=""></a>local a = 3</span>
+<span id="cb12-2"><a href=""></a>local b = 2</span>
+<span id="cb12-3"><a href=""></a></span>
+<span id="cb12-4"><a href=""></a>local myString = nil</span>
+<span id="cb12-5"><a href=""></a></span>
+<span id="cb12-6"><a href=""></a>if a &gt;= b then</span>
+<span id="cb12-7"><a href=""></a>    myString == "This is true"</span>
+<span id="cb12-8"><a href=""></a>else</span>
+<span id="cb12-9"><a href=""></a>    myString == "This is false"</span>
+<span id="cb12-10"><a href=""></a>end</span>
+<span id="cb12-11"><a href=""></a></span>
+<span id="cb12-12"><a href=""></a>print(myString)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href=""></a></span>
+<span id="cb13-2"><a href=""></a>-- il est possible d'utiliser les mots clefs "and" et "or" pour indiquer des relations de condition plus complexes</span>
+<span id="cb13-3"><a href=""></a></span>
+<span id="cb13-4"><a href=""></a>if a and b then -- "if a" permet de vérifier si a n'est pas égal à nil. Idem pour b.</span>
+<span id="cb13-5"><a href=""></a>    -- faire quelque chose</span>
+<span id="cb13-6"><a href=""></a>elseif a or b then</span>
+<span id="cb13-7"><a href=""></a>    -- faire autre chose</span>
+<span id="cb13-8"><a href=""></a>else</span>
+<span id="cb13-9"><a href=""></a>    -- choix par défaut</span>
+<span id="cb13-10"><a href=""></a>end</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="les-boucles-for" class="slide level2">
 <h2>Les boucles “for”</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href="#cb14-1"></a>-- les boucles "for" permettent de boucler un mécanisme tant qu'une variable n'atteint pas une certaine valeur.</span>
-<span id="cb14-2"><a href="#cb14-2"></a></span>
-<span id="cb14-3"><a href="#cb14-3"></a>for i=0, 10 do --incrément de 0 à 10 par pas de 1 (valeur par défaut)</span>
-<span id="cb14-4"><a href="#cb14-4"></a>    print(i)</span>
-<span id="cb14-5"><a href="#cb14-5"></a>end</span>
-<span id="cb14-6"><a href="#cb14-6"></a></span>
-<span id="cb14-7"><a href="#cb14-7"></a>for j=10, 0, -1 do --décrément de 10 à 0 par pas de 1</span>
-<span id="cb14-8"><a href="#cb14-8"></a>    print(j)</span>
-<span id="cb14-9"><a href="#cb14-9"></a>end</span>
-<span id="cb14-10"><a href="#cb14-10"></a></span>
-<span id="cb14-11"><a href="#cb14-11"></a>for k=0, 10, 2 do --incrémente de 0 à 10 par pas de 2</span>
-<span id="cb14-12"><a href="#cb14-12"></a>    print(k)</span>
-<span id="cb14-13"><a href="#cb14-13"></a>end</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href=""></a>-- les boucles "for" permettent de boucler un mécanisme tant qu'une variable n'atteint pas une certaine valeur.</span>
+<span id="cb14-2"><a href=""></a></span>
+<span id="cb14-3"><a href=""></a>for i=0, 10 do --incrément de 0 à 10 par pas de 1 (valeur par défaut)</span>
+<span id="cb14-4"><a href=""></a>    print(i)</span>
+<span id="cb14-5"><a href=""></a>end</span>
+<span id="cb14-6"><a href=""></a></span>
+<span id="cb14-7"><a href=""></a>for j=10, 0, -1 do --décrément de 10 à 0 par pas de 1</span>
+<span id="cb14-8"><a href=""></a>    print(j)</span>
+<span id="cb14-9"><a href=""></a>end</span>
+<span id="cb14-10"><a href=""></a></span>
+<span id="cb14-11"><a href=""></a>for k=0, 10, 2 do --incrémente de 0 à 10 par pas de 2</span>
+<span id="cb14-12"><a href=""></a>    print(k)</span>
+<span id="cb14-13"><a href=""></a>end</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="les-fonctions" class="slide level2">
 <h2>Les fonctions</h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a href="#cb15-1"></a></span>
-<span id="cb15-2"><a href="#cb15-2"></a>function myFunction(argument1) -- définition de la fonction "myFunction" qui prend un argument "argument1"</span>
-<span id="cb15-3"><a href="#cb15-3"></a>    argument1 = argument1 + 1</span>
-<span id="cb15-4"><a href="#cb15-4"></a>    return argument1</span>
-<span id="cb15-5"><a href="#cb15-5"></a>end</span>
-<span id="cb15-6"><a href="#cb15-6"></a></span>
-<span id="cb15-7"><a href="#cb15-7"></a>local a = 2</span>
-<span id="cb15-8"><a href="#cb15-8"></a>a = myFunction(a) --appel de la fonction "myFunction"</span>
-<span id="cb15-9"><a href="#cb15-9"></a>print(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a href="#cb16-1"></a></span>
-<span id="cb16-2"><a href="#cb16-2"></a>function isEven(input)</span>
-<span id="cb16-3"><a href="#cb16-3"></a>    if input % 2 == 0 then</span>
-<span id="cb16-4"><a href="#cb16-4"></a>        return true</span>
-<span id="cb16-5"><a href="#cb16-5"></a>    else</span>
-<span id="cb16-6"><a href="#cb16-6"></a>        return false</span>
-<span id="cb16-7"><a href="#cb16-7"></a>    end</span>
-<span id="cb16-8"><a href="#cb16-8"></a>end</span>
-<span id="cb16-9"><a href="#cb16-9"></a></span>
-<span id="cb16-10"><a href="#cb16-10"></a>local a = 2</span>
-<span id="cb16-11"><a href="#cb16-11"></a>print(isEven(a))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a href=""></a></span>
+<span id="cb15-2"><a href=""></a>function myFunction(argument1) -- définition de la fonction "myFunction" qui prend un argument "argument1"</span>
+<span id="cb15-3"><a href=""></a>    argument1 = argument1 + 1</span>
+<span id="cb15-4"><a href=""></a>    return argument1</span>
+<span id="cb15-5"><a href=""></a>end</span>
+<span id="cb15-6"><a href=""></a></span>
+<span id="cb15-7"><a href=""></a>local a = 2</span>
+<span id="cb15-8"><a href=""></a>a = myFunction(a) --appel de la fonction "myFunction"</span>
+<span id="cb15-9"><a href=""></a>print(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a href=""></a></span>
+<span id="cb16-2"><a href=""></a>function isEven(input)</span>
+<span id="cb16-3"><a href=""></a>    if input % 2 == 0 then</span>
+<span id="cb16-4"><a href=""></a>        return true</span>
+<span id="cb16-5"><a href=""></a>    else</span>
+<span id="cb16-6"><a href=""></a>        return false</span>
+<span id="cb16-7"><a href=""></a>    end</span>
+<span id="cb16-8"><a href=""></a>end</span>
+<span id="cb16-9"><a href=""></a></span>
+<span id="cb16-10"><a href=""></a>local a = 2</span>
+<span id="cb16-11"><a href=""></a>print(isEven(a))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="tp---scripting-dans-reaper" class="title-slide slide level1 center">
 <h1>TP - Scripting dans REAPER</h1>
 
 </section>
-<section id="afficher-hello-world-dans-la-console-de-reaper" class="slide level2">
+<section id="afficher-hello-world-dans-la-console-de-reaper" class="slide level2 scrollable">
 <h2>Afficher “Hello World” dans la console de REAPER</h2>
 <ol type="1">
 <li>Trouver la fonction de REAPER permettant d’afficher un message dans la console. (print() ne fonctionne pas!)</li>
 </ol>
 </section>
-<section id="compter-le-nombre-de-pistes-dans-la-session-et-afficher-ce-nombre" class="slide level2">
+<section id="compter-le-nombre-de-pistes-dans-la-session-et-afficher-ce-nombre" class="slide level2 scrollable">
 <h2>Compter le nombre de pistes dans la session et afficher ce nombre</h2>
 <ol type="1">
 <li>Compter le nombre de pistes</li>
 <li>Afficher ce nombre</li>
 </ol>
 </section>
-<section id="afficher-le-nom-des-pistes-sélectionnées-dans-la-console" class="slide level2">
+<section id="afficher-le-nom-des-pistes-sélectionnées-dans-la-console" class="slide level2 scrollable">
 <h2>Afficher le nom des pistes sélectionnées dans la console</h2>
 <ol type="1">
 <li>Compter le nombre de pistes sélectionnées</li>
@@ -1198,7 +1202,7 @@ Jean-Loup Pecquais
 <li>Attention au type de la valeur à afficher !</li>
 </ul>
 </section>
-<section id="réinitialiser-tous-les-faders-de-la-session-à-0-db" class="slide level2">
+<section id="réinitialiser-tous-les-faders-de-la-session-à-0-db" class="slide level2 scrollable">
 <h2>Réinitialiser tous les faders de la session à 0 dB</h2>
 <ol type="1">
 <li>Compter le nombre de pistes dans la session</li>
@@ -1221,7 +1225,7 @@ Jean-Loup Pecquais
 <section id="baisser-le-volume-des-pistes-sélectionnées-de-3-db" class="slide level2">
 <h2>Baisser le volume des pistes sélectionnées de 3 dB</h2>
 </section>
-<section id="déplacer-les-pistes-sélectionnées-dans-une-nouvelle-piste-dossier" class="slide level2">
+<section id="déplacer-les-pistes-sélectionnées-dans-une-nouvelle-piste-dossier" class="slide level2 scrollable">
 <h2>Déplacer les pistes sélectionnées dans une nouvelle piste dossier</h2>
 <p>Étapes :</p>
 <ol type="1">
@@ -1247,10 +1251,10 @@ Jean-Loup Pecquais
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1"><a href="#cb17-1"></a>local tr1 = reaper.GetSelectedTrack(0,0)</span>
-<span id="cb17-2"><a href="#cb17-2"></a>local tr1Idx = reaper.GetMediaTrackInfo_Value(tr1, "IP_TRACKNUMBER")</span>
-<span id="cb17-3"><a href="#cb17-3"></a>reaper.InsertTrackAtIndex(tr1Idx-1, true)</span>
-<span id="cb17-4"><a href="#cb17-4"></a>reaper.ReorderSelectedTracks(tr1Idx, 1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource {lua} number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1"><a href=""></a>local tr1 = reaper.GetSelectedTrack(0,0)</span>
+<span id="cb17-2"><a href=""></a>local tr1Idx = reaper.GetMediaTrackInfo_Value(tr1, "IP_TRACKNUMBER")</span>
+<span id="cb17-3"><a href=""></a>reaper.InsertTrackAtIndex(tr1Idx-1, true)</span>
+<span id="cb17-4"><a href=""></a>reaper.ReorderSelectedTracks(tr1Idx, 1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="afficher-le-timecode-de-début-et-de-fin-des-objets-sélectionnés-dans-la-console" class="slide level2">
 <h2>Afficher le timecode de début et de fin des objets sélectionnés dans la console</h2>
@@ -1292,8 +1296,8 @@ Jean-Loup Pecquais
 <li>Créer un simple slider, permettant d’amplifier le signal sur une plage allant de -inf à +6dB (l’affichage pourra montrer les valeurs linéaires pour commencer).</li>
 </ul>
 <aside class="notes">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource {faust} number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a href="#cb18-1"></a>import("stdfaust.lib");</span>
-<span id="cb18-2"><a href="#cb18-2"></a>process = no.noise*(vslider("Gain",1,0,2,0.01):si.smoo);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource {faust} number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a href=""></a>import("stdfaust.lib");</span>
+<span id="cb18-2"><a href=""></a>process = no.noise*(vslider("Gain",1,0,2,0.01):si.smoo);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1313,11 +1317,11 @@ Jean-Loup Pecquais
 <li>On peut penser à un système à deux contrôles de volume, un pour le canal 1 et un pour le canal 2, piloté par le même réglage</li>
 </ul>
 <aside class="notes">
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource {faust} number-lines code-with-copy"><code class="sourceCode"><span id="cb19-1"><a href="#cb19-1"></a>import("stdfaust.lib");</span>
-<span id="cb19-2"><a href="#cb19-2"></a></span>
-<span id="cb19-3"><a href="#cb19-3"></a>pi = 22/7;</span>
-<span id="cb19-4"><a href="#cb19-4"></a>phi = (pi/2)*(hslider("Pan",0,-100,100,0.1)+100)/200;</span>
-<span id="cb19-5"><a href="#cb19-5"></a>process = no.noise&lt;:((*(cos(phi))),(*(sin(phi))));</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource {faust} number-lines code-with-copy"><code class="sourceCode"><span id="cb19-1"><a href=""></a>import("stdfaust.lib");</span>
+<span id="cb19-2"><a href=""></a></span>
+<span id="cb19-3"><a href=""></a>pi = 22/7;</span>
+<span id="cb19-4"><a href=""></a>phi = (pi/2)*(hslider("Pan",0,-100,100,0.1)+100)/200;</span>
+<span id="cb19-5"><a href=""></a>process = no.noise&lt;:((*(cos(phi))),(*(sin(phi))));</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1339,14 +1343,14 @@ Jean-Loup Pecquais
 <li><strong>Attention, il faut traiter les alternances positives et négatives</strong></li>
 </ul>
 <aside class="notes">
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource {faust} number-lines code-with-copy"><code class="sourceCode"><span id="cb20-1"><a href="#cb20-1"></a>import("stdfaust.lib");</span>
-<span id="cb20-2"><a href="#cb20-2"></a></span>
-<span id="cb20-3"><a href="#cb20-3"></a>thresh = pow(10,hslider("Threshold", 0, -30, 6, 0.1)/20);</span>
-<span id="cb20-4"><a href="#cb20-4"></a></span>
-<span id="cb20-5"><a href="#cb20-5"></a>process = os.osc(440)&lt;:(</span>
-<span id="cb20-6"><a href="#cb20-6"></a>    ba.if(&gt;(thresh),(thresh),_)&lt;:</span>
-<span id="cb20-7"><a href="#cb20-7"></a>    ba.if(&lt;(-thresh),(-thresh))</span>
-<span id="cb20-8"><a href="#cb20-8"></a>    );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource {faust} number-lines code-with-copy"><code class="sourceCode"><span id="cb20-1"><a href=""></a>import("stdfaust.lib");</span>
+<span id="cb20-2"><a href=""></a></span>
+<span id="cb20-3"><a href=""></a>thresh = pow(10,hslider("Threshold", 0, -30, 6, 0.1)/20);</span>
+<span id="cb20-4"><a href=""></a></span>
+<span id="cb20-5"><a href=""></a>process = os.osc(440)&lt;:(</span>
+<span id="cb20-6"><a href=""></a>    ba.if(&gt;(thresh),(thresh),_)&lt;:</span>
+<span id="cb20-7"><a href=""></a>    ba.if(&lt;(-thresh),(-thresh))</span>
+<span id="cb20-8"><a href=""></a>    );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1368,20 +1372,20 @@ Jean-Loup Pecquais
 <li>Bonus 2 : Que se passe-t-il, pour un son pur, si la fréquence du LFO dépasse 20 Hz et plus ? Et pour un signal plus complexe ?</li>
 </ul>
 <aside class="notes">
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource {faust} number-lines code-with-copy"><code class="sourceCode"><span id="cb21-1"><a href="#cb21-1"></a>import("stdfaust.lib");</span>
-<span id="cb21-2"><a href="#cb21-2"></a></span>
-<span id="cb21-3"><a href="#cb21-3"></a>pi = 22/7;</span>
-<span id="cb21-4"><a href="#cb21-4"></a>amount = hslider("Amount", 50,0,100,1)/100;</span>
-<span id="cb21-5"><a href="#cb21-5"></a>freq = hslider("LFO Freq.", 4, 1, 200, 0.1);</span>
-<span id="cb21-6"><a href="#cb21-6"></a>phi = pi*hslider("Width", 0, 0, 180, 1)/180;</span>
-<span id="cb21-7"><a href="#cb21-7"></a></span>
-<span id="cb21-8"><a href="#cb21-8"></a></span>
-<span id="cb21-9"><a href="#cb21-9"></a>sinOsc(f,phi)=(os.oscp(f,phi)+1)/2;</span>
-<span id="cb21-10"><a href="#cb21-10"></a></span>
-<span id="cb21-11"><a href="#cb21-11"></a>process = os.osc(440)&lt;:(</span>
-<span id="cb21-12"><a href="#cb21-12"></a>    *(sinOsc(freq,0)*amount+(1-amount)),</span>
-<span id="cb21-13"><a href="#cb21-13"></a>    *(sinOsc(freq,phi)*amount+(1-amount))</span>
-<span id="cb21-14"><a href="#cb21-14"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource {faust} number-lines code-with-copy"><code class="sourceCode"><span id="cb21-1"><a href=""></a>import("stdfaust.lib");</span>
+<span id="cb21-2"><a href=""></a></span>
+<span id="cb21-3"><a href=""></a>pi = 22/7;</span>
+<span id="cb21-4"><a href=""></a>amount = hslider("Amount", 50,0,100,1)/100;</span>
+<span id="cb21-5"><a href=""></a>freq = hslider("LFO Freq.", 4, 1, 200, 0.1);</span>
+<span id="cb21-6"><a href=""></a>phi = pi*hslider("Width", 0, 0, 180, 1)/180;</span>
+<span id="cb21-7"><a href=""></a></span>
+<span id="cb21-8"><a href=""></a></span>
+<span id="cb21-9"><a href=""></a>sinOsc(f,phi)=(os.oscp(f,phi)+1)/2;</span>
+<span id="cb21-10"><a href=""></a></span>
+<span id="cb21-11"><a href=""></a>process = os.osc(440)&lt;:(</span>
+<span id="cb21-12"><a href=""></a>    *(sinOsc(freq,0)*amount+(1-amount)),</span>
+<span id="cb21-13"><a href=""></a>    *(sinOsc(freq,phi)*amount+(1-amount))</span>
+<span id="cb21-14"><a href=""></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1419,33 +1423,33 @@ Jean-Loup Pecquais
 <li>Trois bandes paramétriques médiums</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource {faust} number-lines code-with-copy"><code class="sourceCode"><span id="cb22-1"><a href="#cb22-1"></a>import("stdfaust.lib");</span>
-<span id="cb22-2"><a href="#cb22-2"></a>filterBank(N) = hgroup("[2]Filter Bank",seq(i,N,oneBand(i)))</span>
-<span id="cb22-3"><a href="#cb22-3"></a>with {</span>
-<span id="cb22-4"><a href="#cb22-4"></a>    oneBand(j) = vgroup("[%j]Band %a",fi.peak_eq(l,f,b))</span>
-<span id="cb22-5"><a href="#cb22-5"></a>    with {</span>
-<span id="cb22-6"><a href="#cb22-6"></a>        a = j+1; // just so that band numbers don't start at 0</span>
-<span id="cb22-7"><a href="#cb22-7"></a>        l = vslider("[2]Level[unit:db]",0,-24,24,0.01) : si.smoo;</span>
-<span id="cb22-8"><a href="#cb22-8"></a>        f = hslider("[1]Freq[style:knob][scale:log]",320*(pow(10,j/2.5)),20,20000,0.01) : si.smoo;</span>
-<span id="cb22-9"><a href="#cb22-9"></a>        b = f/hslider("[0]Q[style:knob][scale:log]",0.3,0.1,30,0.01) : si.smoo;</span>
-<span id="cb22-10"><a href="#cb22-10"></a>    };</span>
-<span id="cb22-11"><a href="#cb22-11"></a>};</span>
-<span id="cb22-12"><a href="#cb22-12"></a>nBands = 3;</span>
-<span id="cb22-13"><a href="#cb22-13"></a></span>
-<span id="cb22-14"><a href="#cb22-14"></a>lowShelf = hgroup("[1]Low shelf", fi.low_shelf(Ll,fl))</span>
-<span id="cb22-15"><a href="#cb22-15"></a>with{</span>
-<span id="cb22-16"><a href="#cb22-16"></a>    Ll = vslider("[1]Level[unit:db]",0,-27,12, 0.01):si.smoo;</span>
-<span id="cb22-17"><a href="#cb22-17"></a>    fl = vslider("[0]Freq[scale:log][style:knob]",180,20,800, 0.01):si.smoo;</span>
-<span id="cb22-18"><a href="#cb22-18"></a>};</span>
-<span id="cb22-19"><a href="#cb22-19"></a></span>
-<span id="cb22-20"><a href="#cb22-20"></a>highShelf = hgroup("[3]High shelf", fi.high_shelf(Lh,fh))</span>
-<span id="cb22-21"><a href="#cb22-21"></a>with{</span>
-<span id="cb22-22"><a href="#cb22-22"></a>    Lh = vslider("[1]Level[unit:db]",0,-27,12, 0.01):si.smoo;</span>
-<span id="cb22-23"><a href="#cb22-23"></a>    fh = vslider("[0]Freq[scale:log][style:knob]",3800,800,20000, 0.01):si.smoo;</span>
-<span id="cb22-24"><a href="#cb22-24"></a>};</span>
-<span id="cb22-25"><a href="#cb22-25"></a></span>
-<span id="cb22-26"><a href="#cb22-26"></a></span>
-<span id="cb22-27"><a href="#cb22-27"></a>process = hgroup("My EQ", lowShelf : filterBank(nBands) : highShelf);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource {faust} number-lines code-with-copy"><code class="sourceCode"><span id="cb22-1"><a href=""></a>import("stdfaust.lib");</span>
+<span id="cb22-2"><a href=""></a>filterBank(N) = hgroup("[2]Filter Bank",seq(i,N,oneBand(i)))</span>
+<span id="cb22-3"><a href=""></a>with {</span>
+<span id="cb22-4"><a href=""></a>    oneBand(j) = vgroup("[%j]Band %a",fi.peak_eq(l,f,b))</span>
+<span id="cb22-5"><a href=""></a>    with {</span>
+<span id="cb22-6"><a href=""></a>        a = j+1; // just so that band numbers don't start at 0</span>
+<span id="cb22-7"><a href=""></a>        l = vslider("[2]Level[unit:db]",0,-24,24,0.01) : si.smoo;</span>
+<span id="cb22-8"><a href=""></a>        f = hslider("[1]Freq[style:knob][scale:log]",320*(pow(10,j/2.5)),20,20000,0.01) : si.smoo;</span>
+<span id="cb22-9"><a href=""></a>        b = f/hslider("[0]Q[style:knob][scale:log]",0.3,0.1,30,0.01) : si.smoo;</span>
+<span id="cb22-10"><a href=""></a>    };</span>
+<span id="cb22-11"><a href=""></a>};</span>
+<span id="cb22-12"><a href=""></a>nBands = 3;</span>
+<span id="cb22-13"><a href=""></a></span>
+<span id="cb22-14"><a href=""></a>lowShelf = hgroup("[1]Low shelf", fi.low_shelf(Ll,fl))</span>
+<span id="cb22-15"><a href=""></a>with{</span>
+<span id="cb22-16"><a href=""></a>    Ll = vslider("[1]Level[unit:db]",0,-27,12, 0.01):si.smoo;</span>
+<span id="cb22-17"><a href=""></a>    fl = vslider("[0]Freq[scale:log][style:knob]",180,20,800, 0.01):si.smoo;</span>
+<span id="cb22-18"><a href=""></a>};</span>
+<span id="cb22-19"><a href=""></a></span>
+<span id="cb22-20"><a href=""></a>highShelf = hgroup("[3]High shelf", fi.high_shelf(Lh,fh))</span>
+<span id="cb22-21"><a href=""></a>with{</span>
+<span id="cb22-22"><a href=""></a>    Lh = vslider("[1]Level[unit:db]",0,-27,12, 0.01):si.smoo;</span>
+<span id="cb22-23"><a href=""></a>    fh = vslider("[0]Freq[scale:log][style:knob]",3800,800,20000, 0.01):si.smoo;</span>
+<span id="cb22-24"><a href=""></a>};</span>
+<span id="cb22-25"><a href=""></a></span>
+<span id="cb22-26"><a href=""></a></span>
+<span id="cb22-27"><a href=""></a>process = hgroup("My EQ", lowShelf : filterBank(nBands) : highShelf);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tp---conception-dun-compresseur" class="slide level2">
 <h2>TP - Conception d’un compresseur</h2>
@@ -1462,8 +1466,10 @@ Jean-Loup Pecquais
 <li>Installer <strong>Visual Studio</strong> sous Windows ou <strong>XCode</strong> sous macOS.</li>
 <li>Générer le projet depuis l’interface Projucer de <strong>Juce</strong></li>
 </ul>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
@@ -1492,7 +1498,6 @@ Jean-Loup Pecquais
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1753,10 +1758,27 @@ Jean-Loup Pecquais
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1766,8 +1788,17 @@ Jean-Loup Pecquais
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1781,7 +1812,11 @@ Jean-Loup Pecquais
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
